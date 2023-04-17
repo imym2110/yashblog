@@ -1,0 +1,61 @@
+@import "../../assets/custom-colors.scss";
+
+section{
+    background: $light-grey-1;
+    padding: 40px 0px;
+}
+.subscribe-container{
+    width: 1250px;
+}
+.subscribe-image{
+    display: flex;
+    margin: auto;
+    background-color: $white;
+    padding: 23px 25px 0px 25px;
+    border-radius: 100%;
+    width: 100px;
+}
+.subscribe-content{
+    padding-top: 30px;
+    margin: 0;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: $black;
+}
+.subscribe-content-1{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    color: $grey;
+    padding-bottom: 30px;
+}
+
+.subscribe-form{
+    display: flex;
+    justify-content: center;
+}
+.subscribe-form-email{
+    background-color: $white;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 200px 15px 25px;
+}
+.subscribe-button{
+    background-color: $blue;
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    color: $white;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 23px 15px 23px;
+}
+
+
+$breakpoint-mobile: 576px;
+@media (max-width: $breakpoint-mobile){
+    section{
+        width: max-content;
+    } 
+}

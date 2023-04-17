@@ -1,0 +1,33 @@
+@import "../../assets/custom-colors.scss";
+
+.category-section{
+    display: flex;
+    gap: 37px;
+    justify-content: center;
+    margin: 80px auto;
+}
+.category-card{
+    background-color: $white;
+    width: 220px;
+    height: 280px;
+    color: $black;
+    padding: 65px 130px 155px 30px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px #ccc;
+    transition: all 0.2s linear 0.1s;
+
+    &:hover{
+        background-color: $blue;
+        color: $white;
+    }
+}
+
+.category-card-content{
+    font-size: 24px;
+    font-weight: 700;
+    width: 60px;
+    padding-top: 30px;
+}
+.category-button{
+    display: contents;
+}

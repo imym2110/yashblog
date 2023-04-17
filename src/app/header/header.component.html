@@ -1,0 +1,47 @@
+<header>
+    <div class="container header-container">
+        <div class="row responsive-row">
+            <div class="col-lg-5 responsive-col">
+                <a class="header-heading" routerLink="/home">Yash<span>.Blog</span></a>
+            </div>
+            <div class="col-lg-7 responsive-col-1">
+                <ul class="header-list">
+                    <li>
+                        <a class="header-link" routerLink="/home">Home</a>
+                    </li>
+                    <li>
+                        <a class="header-link" routerLink="/categories">Category</a>
+                       
+                    </li>
+                    <li>
+                        <a class="header-link" href="javascript:void(0);">About Me</a>
+                       
+                    </li>
+                    <li>
+                        <img src="../../assets/images/search.png" class="list-images" alt="search">
+                        <a class="header-link" href="javascript:void(0);">Search</a>
+                    </li>
+                    <button routerLink="/login" class="header-button">
+                        <img src="../../assets/images/simple-icons_buymeacoffee.png" class="list-images" alt="coffee">
+                        Login
+                    </button>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-4 dropdown">
+                <br/>
+                <div ngbDropdown>
+                    <button class="dropdown-toggle btn dropdown-button" id="menu" ngbDropdownToggle>
+                        <img src="../../assets/images/dropdown.png" class="dropdown-image" alt="dropdown">
+                    </button>
+                    <div class="dropdown-menu" ngbDropdownMenu="menu">
+                    <button class="dropdown-item" ngbDropdownItem routerLink="/home">HOME</button>
+                    <button class="dropdown-item" ngbDropdownItem routerLink="/categories">CATEGORY</button>
+                    <button class="dropdown-item" ngbDropdownItem>ABOUT ME</button>
+                    <button class="dropdown-item" ngbDropdownItem>SEARCH</button>
+                    <button class="dropdown-item" ngbDropdownItem routerLink="/login">LOGIN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

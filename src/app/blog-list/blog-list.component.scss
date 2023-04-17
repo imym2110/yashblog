@@ -1,0 +1,76 @@
+@import "../../assets/custom-colors.scss";
+
+.blog-list-wrap{
+    padding: 50px 0px;
+}
+
+.blog-section{
+    justify-content: center;
+    margin: auto;
+    padding-bottom: 0px;
+}
+.blog-card{
+    background-color: $white;
+    color: $black;
+    width: 300px;
+    // height: 425px;
+    padding: 20px 20px 20px 20px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 4px 0px #ccc;
+    margin: 0px 20px 30px 20px;
+}
+
+.card-link{
+    border: none;
+    background-color: $white;
+    padding: 0px;
+    text-decoration: none;
+    color: $black;
+}
+.blog-img-box{
+    position: relative;
+}
+.blog-catg{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background: $orange;
+    color: white;
+    padding: 5px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+.blog-card-content{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    font-size: 20px;
+    font-weight: 700;
+    padding-top: 25px;
+    text-align: initial;
+    -webkit-line-clamp: 1;
+}
+.blog-card-content-1{
+    font-weight: 500;
+}
+.blog-subsection{
+    margin-top: 80px;
+}
+.img{
+    display: block;
+    margin: auto;
+}
+.profile-img{
+    width: 57px;
+    height: 57px;
+    border-radius: 100%;
+}
+
+.blog-subcontent{
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0px;
+}
+.blog-subcontent-1{
+    font-size: 14px;
+    font-weight: 400;
+}

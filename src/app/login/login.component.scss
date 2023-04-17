@@ -1,0 +1,50 @@
+@import "../../assets/custom-colors.scss" ;
+
+
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 13%;
+    margin: 200px auto;
+    padding: 30px 20px;
+    box-shadow: 0px 0px 5px 1px #cccccc;
+    border-radius: 15px;
+    background-color: $white;
+}
+
+.login-details {
+    border-radius: 8px;
+    padding: 6px 12px 6px 12px;
+    border: 1px solid rgb(206, 212, 218);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.login-submit {
+    background-color: $blue;
+    color: $white;
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    margin: 20px 10px 10px 10px;
+    border: none;
+}
+$breakpoint-tablet: 1199px;
+
+@media (max-width: $breakpoint-tablet) {
+
+    .login-form{
+        align-items: center;
+        min-width: 250px;
+    }
+    .login-details{
+        min-width: 179px;
+    }
+    p{
+        min-width: 140px;
+    }
+    .login-submit{
+        min-width: 165px;
+    }
+}
+

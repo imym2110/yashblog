@@ -1,0 +1,57 @@
+<section class="blog-list-wrap">
+    <div class="container">
+        <div class="row blog-section">
+            <div *ngFor="let bdata of allFeaturedData" class="col-lg-3 blog-card">
+                <a class="card-link">
+                    <div *ngFor="let img of bdata.attributes?.image?.data">
+                        <div class="blog-img-box">
+                            <p class="blog-catg">{{bdata.attributes?.category}}</p>
+                            <img class="img" [src]="this.apiUrl + img.attributes.url" [alt]="img.attributes.name">
+                        </div>
+                    </div>
+
+                    <p class="blog-card-content">{{bdata.attributes?.title}}</p>
+
+                    <div class="row blog-subsection">
+                        <div class="col-lg-3">
+                            <img class="profile-img" src="../../assets/images/profile.jpg" alt="profile">
+                        </div>
+                        <div class="col-lg-9">
+                            <p class='blog-subcontent'>Yash</p>
+                            <pre class="blog-subcontent-1">{{myDate | date:'dd/MM/yyyy'}} ∙ 3 min read</pre>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="blog-list-wrap">
+    <div class="container">
+        <div class="row blog-section">
+            <div *ngFor="let bdata of allBlogsData" class="col-lg-3 blog-card">
+                <a class="card-link">
+                    <div *ngFor="let img of bdata.attributes?.image?.data">
+                        <div class="blog-img-box">
+                            <p class="blog-catg">{{bdata.attributes?.category}}</p>
+                            <img class="img" [src]="this.apiUrl + img.attributes.url" [alt]="img.attributes.name">
+                        </div>
+                    </div>
+
+                    <p class="blog-card-content">{{bdata.attributes?.title}}</p>
+
+                    <div class="row blog-subsection">
+                        <div class="col-lg-3">
+                            <img class="profile-img" src="../../assets/images/profile.jpg" alt="profile">
+                        </div>
+                        <div class="col-lg-9">
+                            <p class='blog-subcontent'>Yash</p>
+                            <pre class="blog-subcontent-1">{{myDate | date:'dd/MM/yyyy'}} ∙ 3 min read</pre>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

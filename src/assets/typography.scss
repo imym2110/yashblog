@@ -1,0 +1,31 @@
+@mixin heading-1{
+    font-size: 64px;
+    font-weight: bold;
+}
+
+@mixin sub-heading-1{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+@mixin sub-heading-2{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@mixin paragraph-1{
+    font-size: 20px;
+}
+
+@mixin paragraph-2{
+    font-size: 18px;
+}
+
+@mixin paragraph-3{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+@mixin paragraph-4{
+    font-size: 14px;
+}

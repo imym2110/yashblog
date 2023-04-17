@@ -1,0 +1,162 @@
+<section class="blog-hero-wrap">
+
+    <div class="container hero-container">
+        <div class="row responsive-row">
+            <div class="col-lg-6 responsive-col">
+                <p class="hero-heading">Hey , I’m Yash , Front end dev</p>
+                <p class="hero-subheading">On this blog I share tips and tricks, frameworks, projects, tutorials, etc
+                    Make sure you subscribe to get the latest updates</p>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Enter your email here...." class="subscribe-form-email">
+                    <button class="subscribe-button">Subscribe</button>
+                </form>
+            </div>
+            <div class="col-lg-6 hero-image responsive-col-1">
+                <img src="../../assets/images/learn-coding 1.png" alt="hero">
+            </div>
+        </div>
+    </div>
+    <div>
+        <button class="scroll-button" (click)="goDown()">
+            <img src="../../assets/images/scroll-button.png" alt="scroll">
+        </button>
+    </div>
+</section>
+
+
+
+<section class="blog-browse-category-wrap">
+    <div #target class="container category-container">
+        <div class="row category-heading-row">
+            <div class="col-lg-6 p-0">
+                <p class="category-heading"  id="target">Browse The Category
+                    <img src="../../assets/images/Line 3.png" alt="line">
+                </p>
+            </div>
+            <div class="col-lg-6 p-0">
+                <a class="category-heading-1" routerLink="/categories">See All Category
+                    <img class="arrow-button" src="../../assets/images/arrow.png" alt="arrow">
+                </a>
+            </div>
+        </div>
+        <div class="row category-section">
+            <button class="category-button" routerLink="/blogs" *ngFor="let data of mydata">
+                <div>
+                    <div class="col-lg-2 category-card" *ngFor="let img of data.attributes?.category_image?.data">
+                        <div>
+                            <img class="img" [src]="this.apiUrl + img.attributes.url" [alt]="img.attributes.name">
+                        </div>
+                        <p class="category-card-content">{{data.attributes?.category_title}}</p>
+                    </div>
+                </div>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="blog-article-wrap">
+    <div class="container blog-container">
+        <div class="row blog-heading-row">
+            <div class="col-lg-6 p-0">
+                <p class="blog-heading">Featured Articles
+                    <img src="../../assets/images/Line 3.png" alt="line">
+                </p>
+            </div>
+            <div class="col-lg-6 p-0">
+                <a class="blog-heading-1" [routerLink]="['/bloglist','FeaturedBlogs']">See All Article
+                    <img class="arrow-button" src="../../assets/images/arrow.png" alt="arrow">
+                </a>
+            </div>
+        </div>
+        <app-democard [demoblogsdata]="featuredData"></app-democard>
+        <!-- <app-blog-cards [blogsdata]="featuredData"></app-blog-cards> -->
+    </div>
+</section>
+
+<section class="blog-article-wrap">
+    <div class="container blog-container">
+        <div class="row blog-heading-row">
+            <div class="col-lg-6 p-0">
+                <p class="blog-heading">CSS
+                    <img src="../../assets/images/Line 3.png" alt="line">
+                </p>
+            </div>
+            <div class="col-lg-6 p-0">
+                <a class="blog-heading-1" [routerLink]="['/bloglist','CSS']">See All Article
+                    <img class="arrow-button" src="../../assets/images/arrow.png" alt="arrow">
+                </a>
+            </div>
+        </div>
+        <app-democard [demoblogsdata]="cssData"></app-democard>
+        
+        
+        <!-- <app-blog-cards [blogsdata]="cssData"></app-blog-cards> -->
+    </div>
+</section>
+
+<section class="blog-article-wrap">
+    <div class="container blog-container">
+        <div class="row blog-heading-row">
+            <div class="col-lg-6 p-0">
+                <p class="blog-heading">Javascript
+                    <img src="../../assets/images/Line 3.png" alt="line">
+                </p>
+            </div>
+            <div class="col-lg-6 p-0">
+                <a class="blog-heading-1" [routerLink]="['/bloglist','Javascript']">See All Article
+                    <img class="arrow-button" src="../../assets/images/arrow.png" alt="arrow">
+                </a>
+            </div>
+        </div>
+        <app-democard [demoblogsdata]="jsData"></app-democard>
+        
+        
+        <!-- <app-blog-cards [blogsdata]="jsData"></app-blog-cards> -->
+    </div>
+</section>
+
+<section class="blog-article-wrap">
+    <div class="container blog-container">
+        <div class="row blog-heading-row">
+            <div class="col-lg-6 p-0">
+                <p class="blog-heading">React Js
+                    <img src="../../assets/images/Line 3.png" alt="line">
+                </p>
+            </div>
+            <div class="col-lg-6 p-0">
+                <a class="blog-heading-1" [routerLink]="['/bloglist','React_JS']">See All Article
+                    <img class="arrow-button" src="../../assets/images/arrow.png" alt="arrow">
+                </a>
+            </div>
+        </div>
+        <app-democard [demoblogsdata]="reactData"></app-democard>
+        
+        
+        <!-- <app-blog-cards [blogsdata]="featuredData"></app-blog-cards> -->
+    </div>
+</section>
+
+<section class="blog-article-wrap">
+    <div *ngFor="let category of getblogs" class="container blog-container">
+        <div class="row blog-heading-row">
+            <div class="col-lg-6 p-0">
+                <p class="blog-heading">{{ category.attributes?.category_title }}
+                    <img src="../../assets/images/Line 3.png" alt="line">
+                </p>
+            </div>
+            <div class="col-lg-6 p-0">
+                <p class="blog-heading-1">See All Article
+                    <img class="arrow-button" src="../../assets/images/arrow.png" alt="arrow">
+                </p>
+            </div>
+        </div>
+        <app-democard [demoblogsdata]="jsData"></app-democard>
+        <!-- <app-blog-cards [blogsdata]="cssData"></app-blog-cards> -->
+    </div>
+</section>
+
+
+<button class="Read-more-button" (click)="getAllarticles()">More Article</button>
+
+<!-- <app-blog-grids [categoryChildData]="cssCategoryData"></app-blog-grids> -->
+<app-subscribe-section></app-subscribe-section>
