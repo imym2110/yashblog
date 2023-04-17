@@ -2,10 +2,16 @@
     <div class="container">
         <div class="row blog-section">
             <div *ngFor="let bdata of allFeaturedData" class="col-lg-3 blog-card">
-                <a class="card-link">
+                <a class="card-link" [routerLink]="['/blogdetail',bdata.id]">
                     <div *ngFor="let img of bdata.attributes?.image?.data">
                         <div class="blog-img-box">
-                            <p class="blog-catg">{{bdata.attributes?.category}}</p>
+                            <ul class="list-unstyled blogcat-list">
+                                <ng-container *ngFor="let catg of bdata?.attributes.categories?.data">
+                                  
+                                    <li class="blog-catg">{{catg?.attributes?.category_title}}</li>
+                                
+                                </ng-container>
+                            </ul>
                             <img class="img" [src]="this.apiUrl + img.attributes.url" [alt]="img.attributes.name">
                         </div>
                     </div>
@@ -31,10 +37,16 @@
     <div class="container">
         <div class="row blog-section">
             <div *ngFor="let bdata of allBlogsData" class="col-lg-3 blog-card">
-                <a class="card-link">
+                <a class="card-link" [routerLink]="['/blogdetail',bdata.id]">
                     <div *ngFor="let img of bdata.attributes?.image?.data">
                         <div class="blog-img-box">
-                            <p class="blog-catg">{{bdata.attributes?.category}}</p>
+                            <ul class="list-unstyled blogcat-list">
+                                <ng-container *ngFor="let catg of bdata?.attributes.categories?.data">
+                                  
+                                    <li class="blog-catg">{{catg?.attributes?.category_title}}</li>
+                                
+                                </ng-container>
+                            </ul>
                             <img class="img" [src]="this.apiUrl + img.attributes.url" [alt]="img.attributes.name">
                         </div>
                     </div>

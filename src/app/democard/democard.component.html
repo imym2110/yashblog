@@ -1,14 +1,20 @@
 <div class="row blog-section">
-    <div *ngFor="let cssblogs of demoblogsdata" class="col-lg-3 blog-card">
-        <a class="card-link">
-            <div *ngFor="let img of cssblogs.attributes?.image?.data">
+    <div *ngFor="let blog of demoblogsdata" class="col-lg-3 blog-card">
+        <a class="card-link" [routerLink]="['/blogdetail',blog.id]">
+            <div *ngFor="let img of blog.attributes?.image?.data">
                 <div class="blog-img-box">
-                    <p class="blog-catg">{{cssblogs.attributes?.category}}</p>
+                    <ul class="list-unstyled blogcat-list">
+                    <ng-container *ngFor="let catg of blog?.attributes.categories?.data">
+                      
+                        <li class="blog-catg">{{catg?.attributes?.category_title}}</li>
+                    
+                    </ng-container>
+                </ul>
                     <img class="img" [src]="this.apiUrl + img.attributes.url" [alt]="img.attributes.name">
                 </div> 
             </div>
         
-        <p class="blog-card-content">{{cssblogs.attributes?.title}}</p>
+        <p class="blog-card-content">{{blog.attributes?.title}}</p>
 
         
         <div class="row blog-subsection">

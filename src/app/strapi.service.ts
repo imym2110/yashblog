@@ -39,4 +39,8 @@ export class StrapiService {
   getAllBlogByCatg(categoryname:string){
     return this.http.get(this.apiUrl + '/api/blogs?filters[category]='+categoryname+'&populate=*')
   }
+
+  getBlogDetailById( id:number){
+    return this.http.get(this.apiUrl + '/api/blogs?filters[id]='+id+'&populate=*')
+  }
 }

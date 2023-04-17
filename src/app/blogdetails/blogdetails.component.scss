@@ -1,0 +1,47 @@
+@import "../../assets/custom-colors.scss";
+
+
+.blog-detail-wrap {
+    margin: 50px auto;
+}
+
+.image_column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .img {
+        width: 410px;
+        border-radius: 18px;
+        box-shadow: 0px 0px 4px 0px #646262;
+    }
+
+    .category_list {
+        display: inline-block;
+        margin: 10px 5px;
+        background: #ea6446;
+        color: white;
+        padding: 5px;
+        border-radius: 8px;
+        font-weight: 700;
+    }
+}
+
+.blog_category {
+    font-weight: 800;
+    color: $orange;
+}
+
+.blog_title {
+    //font-size: 30px;
+    font-weight: 600;
+}
+
+.blog_summary {
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.blog_description {
+    font-weight: 400;
+}

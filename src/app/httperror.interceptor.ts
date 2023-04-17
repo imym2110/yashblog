@@ -9,10 +9,8 @@ import {
 import { catchError, Observable, pipe, throwError } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 
-
-
 @Injectable()
-export class LoaderInterceptor implements HttpInterceptor {
+export class HttperrorInterceptor implements HttpInterceptor {
 
   constructor(private toastr: ToastrService) {}
 

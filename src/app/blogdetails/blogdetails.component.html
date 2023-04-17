@@ -1,0 +1,23 @@
+<section class="blog-detail-wrap">
+    <div class="container">
+        <div *ngFor="let bdata of allFeaturedData" class="row">
+            <div class="col-lg-6 image_column">
+                <div *ngFor="let img of bdata.attributes?.image?.data">
+                    <img class="img" [src]="this.apiUrl + img.attributes.url" [alt]="img.attributes.name">
+
+                    <ul class="list-unstyled">
+                        <ng-container *ngFor="let catg of bdata?.attributes.categories?.data">
+                            <li class="category_list">{{catg?.attributes?.category_title}}</li>
+                        </ng-container>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h1 class="blog_title">{{bdata.attributes?.title}}</h1>
+                <p class="blog_summary">{{bdata.attributes?.summary}}</p>
+                <p class="blog_description">{{bdata.attributes?.description}}</p>
+            </div>
+        </div>
+    </div>
+</section>
