@@ -1,0 +1,9 @@
+Create a New Folder
+>Open the folder in Vscode
+>In terminal ---- npx create-strapi-app@latest my-project
+npm run develop
+
+
+--->
+To show all relations in api:
+http://localhost:8501/api/restaurants?populate=*    [USE ?populate=*]
