@@ -17,9 +17,10 @@ import { AllCategoriesComponent } from './all-categories/all-categories.componen
 import { BlogCardsComponent } from './blog-cards/blog-cards.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoaderInterceptor } from './loader.interceptor';
 import { DemocardComponent } from './democard/democard.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
+import { HttperrorInterceptor } from './httperror.interceptor';
+import { BlogdetailsComponent } from './blogdetails/blogdetails.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { BlogListComponent } from './blog-list/blog-list.component';
     BlogCardsComponent,
     DemocardComponent,
     BlogListComponent,
+    BlogdetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,7 @@ import { BlogListComponent } from './blog-list/blog-list.component';
     //NgxScrollTopModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: HttperrorInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })
