@@ -25,9 +25,11 @@ export class StrapiService {
   getselectedcategory(page:any){
     return this.http.get(this.apiUrl + '/api/categories?pagination[limit]='+ page + '&populate=*')
   }
+
   getAllFeaturedBlog(isfeatured:boolean){
     return this.http.get(this.apiUrl + '/api/blogs?filters[isfeatured]='+isfeatured+'&populate=*')
   }
+  
   getFeaturedBlog(page:any, isfeatured:boolean){
     return this.http.get(this.apiUrl + '/api/blogs?pagination[limit]='+page+'&filters[isfeatured]='+isfeatured+'&populate=*')
   }
@@ -42,5 +44,9 @@ export class StrapiService {
 
   getBlogDetailById( id:number){
     return this.http.get(this.apiUrl + '/api/blogs?filters[id]='+id+'&populate=*')
+  }
+
+  getDynamicForm(){
+    return this.http.get(this.apiUrl + '/api/content-type-builder/content-types')
   }
 }

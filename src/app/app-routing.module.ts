@@ -15,7 +15,13 @@ const routes: Routes = [
   { path: 'categories', component:AllCategoriesComponent},
   { path: 'blogs', component:HomeComponent},
   { path:'bloglist/:catid', component:BlogListComponent},
-  { path:'blogdetail/:blogid', component:BlogdetailsComponent}
+  { path:'blogdetail/:blogid', component:BlogdetailsComponent},
+  {
+    path: 'admin', 
+    loadChildren: () => import('./admin/admin.module').then(
+      module => module.AdminModule
+    )
+  }
 ];
 
 @NgModule({

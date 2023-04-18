@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
-import { StrapiService } from '../strapi.service';
+import { StrapiService } from '../services/strapi.service';
 
 @Component({
   selector: 'app-all-categories',

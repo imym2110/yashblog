@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { environment } from 'src/environments/environment';
-import { StrapiService } from '../strapi.service';
+import { StrapiService } from '../services/strapi.service';
+
 
 
 @Component({
