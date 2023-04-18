@@ -22,7 +22,6 @@ export class BlogListComponent {
   alldata:any[]=[];
   categoryidFromURL:any;
 
-
   constructor(private datePipe: DatePipe, private strapiservice: StrapiService, private activatedRoute: ActivatedRoute) {
     this.datePipe.transform(this.myDate, 'dd/mm/yyyy');
     //console.log(this.myDate);
@@ -34,7 +33,7 @@ export class BlogListComponent {
     this.activatedRoute.paramMap.subscribe((params) => {
       this.categoryidFromURL = params.get('catid');
       if(this.categoryidFromURL === 'FeaturedBlogs')
-      {
+      {   
         //  this.isFeatData = true;
           this.featuredCategories(); 
       }
