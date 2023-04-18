@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     if (this.form.value.username == "yash" && this.form.valid)
     {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/admin/addblog']);
     }
   }
 }
