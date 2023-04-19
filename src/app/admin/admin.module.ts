@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AddblogComponent } from './addblog/addblog.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     AdminRoutingModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    FormsModule,
   ]
 })
 export class AdminModule { }

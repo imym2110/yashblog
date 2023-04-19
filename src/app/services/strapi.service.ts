@@ -35,11 +35,11 @@ export class StrapiService {
   }
 
   getBlogByCategory(page:any, categoryname:string){
-    return this.http.get(this.apiUrl + '/api/blogs?pagination[limit]='+page+'&filters[category]='+categoryname+'&populate=*')
+    return this.http.get(this.apiUrl + '/api/blogs?pagination[limit]='+page+'&filters[categories][category_title][$eq]='+categoryname+'&populate=*')
   }
 
   getAllBlogByCatg(categoryname:string){
-    return this.http.get(this.apiUrl + '/api/blogs?filters[category]='+categoryname+'&populate=*')
+    return this.http.get(this.apiUrl + '/api/blogs?filters[categories][category_title][$eq]='+categoryname+'&populate=*')
   }
 
   getBlogDetailById( id:number){
@@ -48,5 +48,30 @@ export class StrapiService {
 
   getDynamicForm(){
     return this.http.get(this.apiUrl + '/api/content-type-builder/content-types')
+  }
+
+  addBlogForm(temp:any) {
+    console.log(temp, 'Inservice')
+     const url = this.apiUrl + '/api/blogs/?populate=*';
+     const body = 
+     {
+      "data": {
+        "title" : temp.title,
+        "summary" : temp.summary,
+        "description" : temp.description,
+        "isFeatured" : temp.featured_RadioButton,
+        "categories": [
+          temp.categories
+        ],
+    
+      }
+    }
+     console.log(body, 'Safety')
+     const headers = new Headers(
+      {
+          'Content-Type': 'application/json'
+      });
+      console.log(body, "Service")
+  return this.http.post(url, body);
   }
 }
