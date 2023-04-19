@@ -1,1 +1,86 @@
-<p>addblog works!</p>
+<form class="container addBlogform" [formGroup]="addblogform" (ngSubmit)="onSubmit()">
+
+    <h2 class="addBlogHeading mb-3">Upload your Blog</h2>
+
+    <div class="mt-3 mb-3">
+        <label for="addBlogTitle" class="form-label">Title</label>
+        <input type="text" class="form-control" id="addBlogTitle" placeholder="title" name="title"
+            formControlName="title">
+    </div>
+
+    <div class="mb-3">
+        <label for="addBlogSummary" class="form-label">Summary</label>
+        <input type="text" class="form-control" id="addBlogSummary" placeholder="summary" name="summary"
+            formControlName="summary">
+    </div>
+    
+    <div class="mb-3">
+        <label for="addBlogDesc" class="form-label">Description</label>
+        <textarea class="form-control" id="addBlogDesc" rows="4" name="description"
+            formControlName="description"></textarea>
+    </div>
+
+    <select class="form-select mb-3" name="categories" formControlName="categories">
+        <option value="0" disabled>Select Category</option>
+        <option *ngFor="let category of mydata" value="{{category.id}}">{{category.attributes?.category_title}}</option>
+
+    </select>
+
+    <div>
+        <p class="mb-1">Feature your blog?</p>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="featured_RadioButton"
+                formControlName="featured_RadioButton" id="isfeatured">
+            <label class="form-check-label" for="isfeatured">
+                Yes
+            </label>
+        </div>
+        <div class="form-check form-check-inline mb-3">
+            <input class="form-check-input" type="radio" name="featured_RadioButton" id="isnotfeatured">
+            <label class="form-check-label" for="isnotfeatured">
+                No
+            </label>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <button class="btn addBlogSubmit" type="submit">Submit</button>
+    </div>
+
+</form>
+
+
+
+
+
+<!-- <form class="add-blog-form">
+    <input type="text" name="title" placeholder="Title" class="add-details" formControlName="title">
+    <input type="text" name="summary" placeholder="Summary" class="add-details" formControlName="summary">
+    <textarea name="description" cols="22" rows="5" placeholder="Description" formControlName="description"
+        ngModel></textarea>
+    <input type="file" name="image" class="add-details" formControlName="image">
+
+
+    <span>Feature your BLog?</span>
+    <div>
+        <input type="radio" id="isfeatured" name="isfeatured" value="Yes">
+        <label for="html">Yes</label><br>
+        <input type="radio" id="isfeatured" name="isfeatured" value="No">
+        <label for="css">No</label>
+    </div>
+
+    <label for="category">Choose a category:</label>
+    <select name="category" id="category">
+      <option value="tailwind">Tailwind</option>
+      <option value="vue">Vue</option>
+      <option value="angular">Angular</option>
+      <option value="java">Java</option>
+      <option value="node_js">Node JS</option>
+      <option value="css">CSS</option>
+      <option value="javascript">Javascript</option>
+      <option value="react_js">React JS</option>
+    </select>
+
+    <p>complete the form to enable the button</p>
+    <button type="submit" class="blog-sumbit">SUBMIT</button>
+</form> -->
