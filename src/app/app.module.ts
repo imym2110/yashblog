@@ -23,6 +23,7 @@ import { HttperrorInterceptor } from './httperror.interceptor';
 import { BlogdetailsComponent } from './blogdetails/blogdetails.component';
 import { LoaderComponent } from './loader/loader.component';
 import { LoaderInterceptor } from './loader.interceptor';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { LoaderInterceptor } from './loader.interceptor';
     BlogListComponent,
     BlogdetailsComponent,
     LoaderComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

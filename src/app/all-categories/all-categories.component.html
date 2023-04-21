@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row category-section">
-        <button class="category-button" routerLink="/blogs" *ngFor="let data of mydata">
+        <button class="category-button" *ngFor="let data of mydata" [routerLink]="['/bloglist',data.attributes?.category_title]">
             <div>
                 <div class="col-lg-2 category-card"
                     *ngFor="let img of data.attributes?.category_image?.data">

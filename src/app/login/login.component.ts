@@ -3,8 +3,12 @@ import {
   FormGroup,
   Validators,
   FormControl,
+  FormBuilder,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { AuthService } from '../services/auth.service';
+import { StrapiService } from '../services/strapi.service';
 
 @Component({
   selector: 'app-login',
@@ -12,24 +16,65 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  form: FormGroup = new FormGroup({
-    username: new FormControl('', Validators.required),
-    password: new FormControl('', [Validators.minLength(4), Validators.maxLength(10), Validators.required]),
-  });
+  isLoggedInFlag: boolean = false;
+  isLogOutFlag: boolean = false;
+  isSubmitted: boolean = false;
+  isValidUser: boolean = false;
+  form: FormGroup = new FormGroup({});
+  // form: FormGroup = new FormGroup({
+  //   username: new FormControl('', Validators.required),
+  //   password: new FormControl('', [Validators.minLength(4), Validators.maxLength(10), Validators.required]),
+  // });
   constructor(
-    private router: Router,
+    private router: Router, private fb: FormBuilder, private authservice: AuthService, private toast: ToastrService, private strapiservice: StrapiService
   ) { }
   ngOnInit() {
-    // this.form = this.fb.group({
-    //   username: new FormControl('', [Validators.required]),
-    //   password: new FormControl('', [Validators.required]),
-    // });
+    console.log('Authflag', this.authservice?.isAuthenticate)
+
+    if (this.authservice.isAuthenticate === true) {
+      this.isLoggedInFlag = true;
+    }
+    else {
+      this.isLoggedInFlag = false
+    }
+    this.form = this.fb.group({
+      username: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
+    });
   }
 
   onSubmit() {
-    if (this.form.value.username == "yash" && this.form.valid)
-    {
-      this.router.navigate(['/admin/addblog']);
-    }
+
+    this.strapiservice.getUser(this.form.value).subscribe((data:any) => {
+      console.log(data, 'ddddddddddd')
+      if(data?.jwt){
+
+        // this.isLogOutFlag = true;       
+        // this.isSubmitted = true;
+        // this.isValidUser = true;
+        localStorage.setItem('token',data.jwt);
+        this.authservice.isAuthenticate = true;
+        this.router.navigate(['/admin/addblog']);
+      }
+    })
+    // .login(this.form.value.username, this.form.value.password)
+    // .subscribe((data) => {
+    //   if (data) {
+    //     this.isLogOutFlag = true;
+    //     this.toast.success("Logged In Successfully")
+    //     this.isSubmitted = true;
+    //     this.isValidUser = data;
+    //     this.router.navigate(['/admin/addblog']);
+    //   }
+    // });
+  }
+
+  logOut() {
+    this.authservice.isAuthenticate = false;
+    this.isLogOutFlag = true;
+    localStorage.removeItem('token');
+
+    this.toast.success("Logged Out Successfully")
+    this.router.navigate(['']);
   }
 }

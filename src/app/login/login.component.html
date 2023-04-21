@@ -1,10 +1,13 @@
 <section class="blog-login-wrap">
-    <form class="login-form" [formGroup]="form">
+    <form *ngIf="!isLoggedInFlag" class="login-form" [formGroup]="form">
       <input type="text" id="username" placeholder="username" class="login-details" formControlName="username"><br>
       <!-- <input type="password" id="password" placeholder="password" class="login-details" formControlName="password"> -->
-      <show-hide-password size="md" btnstyle="primary" [btnOutline]="false">
+      <show-hide-password size="lg" btnstyle="primary" [btnOutline]="false">
         <input type="password"  placeholder="password" formControlName="password">
       </show-hide-password>
-      <button type="submit" class="login-submit"  (click)="onSubmit()">LOGIN</button>
+      <button type="submit" class="login-submit"  (click)="onSubmit()">Login</button>
+
+      <button type="submit" class="register" routerLink="/register">Register</button>
     </form>
+    <button *ngIf="isLoggedInFlag" class="logout" (click)="logOut()">Logout</button>
   </section>

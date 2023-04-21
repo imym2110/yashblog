@@ -1,5 +1,4 @@
 <section class="blog-hero-wrap">
-
     <div class="container hero-container">
         <div class="row responsive-row">
             <div class="col-lg-6 responsive-col">
@@ -23,8 +22,6 @@
     </div>
 </section>
 
-
-
 <section class="blog-browse-category-wrap">
     <div #target class="container category-container">
         <div class="row category-heading-row">
@@ -40,7 +37,7 @@
             </div>
         </div>
         <div class="row category-section">
-            <button class="category-button" routerLink="/blogs" *ngFor="let data of mydata">
+            <button class="category-button" [routerLink]="['/bloglist',data.attributes?.category_title]" *ngFor="let data of mydata">
                 <div>
                     <div class="col-lg-2 category-card" *ngFor="let img of data.attributes?.category_image?.data">
                         <div>

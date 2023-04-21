@@ -17,11 +17,12 @@ export class AddblogComponent {
 
   constructor(private detail: FormBuilder, private StrapiService: StrapiService, private toast : ToastrService) {                                                                                                   
     this.addblogform = this.detail.group({                                                                                                   
-      title: [''],                                                                                                   
-      summary: [''],                                                                                                    
-      description: [''], 
-      featured_RadioButton : '', 
-      categories: [0],                                                                                                  
+      title: [''],
+      summary: ['', Validators.required],
+      description: ['', Validators.required],
+      featured_RadioButton : true,
+      categories: [0],
+      //image: ''
     });                                                                                                        
   }
   ngOnInit(){
