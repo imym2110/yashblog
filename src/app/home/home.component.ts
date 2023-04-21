@@ -1,7 +1,8 @@
 import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { StrapiService } from '../strapi.service';
+import { StrapiService } from '../services/strapi.service';
+
 
 @Component({
   selector: 'app-home',
@@ -95,7 +96,7 @@ export class HomeComponent implements OnInit {
   }
 
   reactBlogsData(){
-    this.strapiservice.getBlogByCategory(4,'React_JS').subscribe(blog => {
+    this.strapiservice.getBlogByCategory(4,'React JS').subscribe(blog => {
       console.log(blog,'react_blog_data')
       this.getblogs = blog;
       Object.values(this.getblogs.data).filter(x=>{

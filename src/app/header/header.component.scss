@@ -29,7 +29,14 @@ header{
         height: 27px;
         @include paragraph-2;
         line-height: 23px;
-        color: $blue
+        color: $blue;
+        transition: all 0.1s linear 0.1s;
+    }
+
+    &:hover{
+        span{
+            color: $orange;
+        }
     }
 }
 
@@ -53,11 +60,13 @@ header{
     padding: 0px 5px 5px 0px;
 }
 .header-button{
+    display: flex;
+    text-decoration: none;
     background-color: $blue;
     border-radius: 4px;
     color: $white;
     border: none;
-    padding: 7px 17px;
+    padding: 7px 14px;
     font-size: 18px;
     font-weight: 700;
 }

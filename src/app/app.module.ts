@@ -21,6 +21,9 @@ import { DemocardComponent } from './democard/democard.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { HttperrorInterceptor } from './httperror.interceptor';
 import { BlogdetailsComponent } from './blogdetails/blogdetails.component';
+import { LoaderComponent } from './loader/loader.component';
+import { LoaderInterceptor } from './loader.interceptor';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,8 @@ import { BlogdetailsComponent } from './blogdetails/blogdetails.component';
     DemocardComponent,
     BlogListComponent,
     BlogdetailsComponent,
+    LoaderComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +56,7 @@ import { BlogdetailsComponent } from './blogdetails/blogdetails.component';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttperrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
