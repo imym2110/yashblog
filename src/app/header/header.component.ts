@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -7,5 +9,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  constructor(private router: Router){}
+  isLoginFlag : boolean = false;
+  isLogOutFlag : boolean = false;
+
+  constructor(private router: Router, private authservice:AuthService, private toast:ToastrService){}
+
+  logOut() {
+    this.authservice.isAuthenticate = false;
+    this.isLogOutFlag = true;
+    localStorage.removeItem('token');
+    this.toast.success("Logged Out Successfully")
+    this.router.navigate(['']);
+  }
 }

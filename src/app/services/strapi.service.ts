@@ -42,6 +42,10 @@ export class StrapiService {
     return this.http.get(this.apiUrl + '/api/blogs?filters[categories][category_title][$eq]='+categoryname+'&populate=*')
   }
 
+  getAllBlogByCatgID(cat_id:number){
+    return this.http.get(this.apiUrl + '/api/blogs?filters[categories][id][$eq]='+cat_id+'&populate=*')
+  }
+
   getBlogDetailById( id:number){
     return this.http.get(this.apiUrl + '/api/blogs?filters[id]='+id+'&populate=*')
   }
@@ -63,6 +67,9 @@ export class StrapiService {
         "categories": [
           temp.categories
         ],
+        // "image" : [
+        //  temp.image
+        // ]
     
       }
     }
@@ -73,5 +80,27 @@ export class StrapiService {
       });
       console.log(body, "Service")
   return this.http.post(url, body);
+  }
+
+
+  getUser(test:any){
+    const url = this.apiUrl + '/api/auth/local';
+    const user = 
+    {
+      "identifier" : test.username,
+      "password" : test.password
+    }
+    return this.http.post(url, user);
+  }
+
+  registerUser(reg:any){
+    const url = this.apiUrl + '/api/auth/local/register';
+    const new_user = 
+    {
+      "username" : reg.username,
+      "email" : reg.email,
+      "password" : reg.password
+    }
+    return this.http.post(url, new_user);
   }
 }

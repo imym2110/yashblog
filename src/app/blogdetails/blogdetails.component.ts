@@ -14,7 +14,7 @@ export class BlogdetailsComponent {
   apiUrl = environment.apiUrl;
   getblogs: any;
   allFeaturedData: any[]=[];
-  blogidFromURL: any;
+ // blogidFromURL: any;
   cards: any;
   cardDetails: any[]=[];
 

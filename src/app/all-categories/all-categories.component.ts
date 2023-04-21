@@ -12,16 +12,16 @@ export class AllCategoriesComponent {
   mydata: any[] =[];
   apiUrl = environment.apiUrl;
 
-  constructor(private route: ActivatedRoute, private router: Router, private http: StrapiService) {}
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private strapiservice: StrapiService) {}
 
   getcategory:any;
-  category: any
+  category: any;
   ngOnInit(): void {
     this.categories();
   }
 
   categories() {
-    this.http.getCategoryData().subscribe(category_data => {
+    this.strapiservice.getCategoryData().subscribe(category_data => {
       console.log(category_data,'data')
       this.category = category_data;
       Object.values(this.category.data).filter(x=>{
@@ -32,4 +32,5 @@ export class AllCategoriesComponent {
     );
     console.log(this.mydata);
   }
+
 }

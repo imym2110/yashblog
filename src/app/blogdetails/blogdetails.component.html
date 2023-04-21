@@ -3,11 +3,11 @@
         <div *ngFor="let bdata of allFeaturedData" class="row">
             <div class="col-lg-6 image_column">
                 <div *ngFor="let img of bdata.attributes?.image?.data">
-                    <img class="img" [src]="this.apiUrl + img.attributes.url" [alt]="img.attributes.name">
+                    <img class="img img-thumbnail" [src]="this.apiUrl + img.attributes.url" [alt]="img.attributes.name">
 
                     <ul class="list-unstyled">
                         <ng-container *ngFor="let catg of bdata?.attributes.categories?.data">
-                            <li class="category_list">{{catg?.attributes?.category_title}}</li>
+                            <li class="category_list" [routerLink]="['/bloglist',catg.attributes?.category_title]">{{catg?.attributes?.category_title}}</li>
                         </ng-container>
                     </ul>
 

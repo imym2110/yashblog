@@ -12,8 +12,6 @@
 
     .img {
         width: 410px;
-        border-radius: 18px;
-        box-shadow: 0px 0px 4px 0px #646262;
     }
 
     .category_list {
@@ -33,15 +31,18 @@
 }
 
 .blog_title {
-    //font-size: 30px;
     font-weight: 600;
+    font-size: 30px;
+    margin-bottom: 15px;
 }
 
 .blog_summary {
     font-weight: 500;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .blog_description {
     font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
 }

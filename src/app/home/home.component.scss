@@ -1,5 +1,6 @@
 @import "../../assets/custom-colors.scss";
 
+
 .blog-hero-wrap{
     background-color: $light-grey-1;
     padding-top: 170px;
@@ -46,6 +47,11 @@
         border: none;
         border-radius: 8px;
         padding: 11px 18px 11px 18px;
+        transition: all 0.1s linear 0.1s;
+
+        &:hover{
+            background-color: $orange;
+        }
     }
     .scroll-button{
         margin: 220px auto 0px auto;
