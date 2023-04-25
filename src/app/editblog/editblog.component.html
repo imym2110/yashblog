@@ -1,0 +1,57 @@
+<div>
+<form class="container addBlogform" [formGroup]="editblogform">
+    <h2 class="addBlogHeading mb-3">Edit your Blog</h2>
+
+    <div class="mt-3 mb-3">
+        <label for="addBlogTitle" class="form-label">Id</label>
+        <input type="text" class="form-control" id="addBlogTitle" placeholder="Id" name="id"
+            formControlName="id">
+    </div>
+
+    <div class="mb-3">
+        <label for="addBlogTitle" class="form-label">Title</label>
+        <input type="text" class="form-control" id="addBlogTitle" placeholder="title" name="title"
+            formControlName="title">
+    </div>
+
+    <div class="mb-3">
+        <label for="addBlogSummary" class="form-label">Summary</label>
+        <input type="text" class="form-control" id="addBlogSummary" placeholder="summary" name="summary"
+            formControlName="summary">
+    </div>
+    
+    <div class="mb-3">
+        <label for="addBlogDesc" class="form-label">Description</label>
+        <textarea class="form-control" id="addBlogDesc" rows="4" name="description"
+            formControlName="description"></textarea>
+    </div>
+
+    <select class="form-select mb-3" name="categories" formControlName="categories">
+        <option value="0" disabled>Select Category</option>
+        <option *ngFor="let category of mydata" value="{{category.id}}">{{category.attributes?.category_title}}</option>
+
+    </select>
+    <!-- <input type="file" name="image" class="add-details" formControlName="image"> -->
+    <div>
+        <p class="mb-1">Feature your blog?</p>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="featured_RadioButton"
+                formControlName="featured_RadioButton" id="isfeatured">
+            <label class="form-check-label" for="isfeatured">
+                Yes
+            </label>
+        </div>
+        <div class="form-check form-check-inline mb-3">
+            <input class="form-check-input" type="radio" name="featured_RadioButton" id="isnotfeatured">
+            <label class="form-check-label" for="isnotfeatured">
+                No
+            </label>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <button class="btn addBlogSubmit" type="submit" (click)="editBlogDetails(this.editblogform.value.id)">Submit</button>
+    </div>
+
+</form>
+</div>

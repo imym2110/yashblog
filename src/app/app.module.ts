@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbAlertModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbAlertModule, NgbModule, NgbPaginationModule, NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { SubscribeSectionComponent } from './subscribe-section/subscribe-section.component';
@@ -24,6 +24,10 @@ import { BlogdetailsComponent } from './blogdetails/blogdetails.component';
 import { LoaderComponent } from './loader/loader.component';
 import { LoaderInterceptor } from './loader.interceptor';
 import { RegisterComponent } from './register/register.component';
+import { AdministrationComponent } from './administration/administration.component';
+import { StrapiTableComponent } from './strapi-table/strapi-table.component';
+import { DecimalPipe, NgFor } from '@angular/common';
+import { EditblogComponent } from './editblog/editblog.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +44,9 @@ import { RegisterComponent } from './register/register.component';
     BlogdetailsComponent,
     LoaderComponent,
     RegisterComponent,
+    AdministrationComponent,
+    StrapiTableComponent,
+    EditblogComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +58,11 @@ import { RegisterComponent } from './register/register.component';
     ReactiveFormsModule,
     ToastrModule.forRoot(),
     NgbAlertModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbTypeaheadModule,
+    NgbPaginationModule,
+    DecimalPipe,
+    NgFor,
     //NgxScrollTopModule
   ],
   providers: [
