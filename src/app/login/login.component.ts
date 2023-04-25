@@ -44,36 +44,20 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-
     this.strapiservice.getUser(this.form.value).subscribe((data:any) => {
       console.log(data, 'ddddddddddd')
       if(data?.jwt){
-
-        // this.isLogOutFlag = true;       
-        // this.isSubmitted = true;
-        // this.isValidUser = true;
         localStorage.setItem('token',data.jwt);
         this.authservice.isAuthenticate = true;
-        this.router.navigate(['/admin/addblog']);
+        this.router.navigate(['/admin/addblog']); 
       }
     })
-    // .login(this.form.value.username, this.form.value.password)
-    // .subscribe((data) => {
-    //   if (data) {
-    //     this.isLogOutFlag = true;
-    //     this.toast.success("Logged In Successfully")
-    //     this.isSubmitted = true;
-    //     this.isValidUser = data;
-    //     this.router.navigate(['/admin/addblog']);
-    //   }
-    // });
   }
 
   logOut() {
     this.authservice.isAuthenticate = false;
     this.isLogOutFlag = true;
     localStorage.removeItem('token');
-
     this.toast.success("Logged Out Successfully")
     this.router.navigate(['']);
   }

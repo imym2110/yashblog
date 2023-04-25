@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 import { StrapiService } from './strapi.service';
 
 @Injectable({
@@ -8,8 +8,6 @@ import { StrapiService } from './strapi.service';
 })
 export class AuthService {
   isAuthenticate: boolean = false;
-
-  
 
   constructor(private strapiservice : StrapiService){
     let a = localStorage.getItem('token');

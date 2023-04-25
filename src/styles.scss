@@ -4,6 +4,8 @@
 
 $primary: #6246EA;
 
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 @import 'bootstrap/scss/bootstrap';
 @import 'ngx-toastr/toastr';
 
@@ -16,7 +18,6 @@ html, body
 {
         height:100vh;
         width: 100%;
-        // background-color: $light-grey-1;
 }
 
 *
@@ -30,8 +31,3 @@ html, body
     }
     
 }
-
-// .scrolltop-button{
-    
-//     background-color: $primary !important;
-// }

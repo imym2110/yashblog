@@ -1,0 +1,28 @@
+<section class="container mt-4 mb-4">
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">ID</th>
+				<th scope="col">Title</th>
+				<th scope="col">Summary</th>
+				<th scope="col">Created</th>
+				<th scope="col">Delete</th>
+				<th scope="col">Update</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let data of strapitable">
+				<th scope="row">{{ data.id }}</th>
+				<td>
+					{{ data.attributes?.title }}
+				</td>
+				<td>{{ data.attributes?.summary}}</td>
+				<td class="date_created">{{data.attributes?.createdAt | date:'dd-MM-yyyy'}}</td>
+				<td><button (click)="deleteBlogItem(data.id)" class="delete_button bg-danger"><i
+							class="fa-solid fa-trash"></i></button></td>
+				<td><button (click)="updateBlogItem(data.id)" class="update_button bg-success"><i
+							class="fa-solid fa-pen"></i></button></td>
+			</tr>
+		</tbody>
+	</table>
+</section>

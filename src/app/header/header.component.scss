@@ -1,5 +1,4 @@
 @import "/src/assets/custom-colors.scss";
-@import "/src/assets/typography.scss";
 
 header{
     box-shadow: 4px 6px 13px rgba(215, 215, 215, 0.25);
@@ -27,7 +26,8 @@ header{
     span {
         width: 48px;
         height: 27px;
-        @include paragraph-2;
+        font-size: 18px;
+        font-weight: 700;
         line-height: 23px;
         color: $blue;
         transition: all 0.1s linear 0.1s;

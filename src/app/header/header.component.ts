@@ -9,7 +9,6 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  isLoginFlag : boolean = false;
   isLogOutFlag : boolean = false;
 
   constructor(private router: Router, private authservice:AuthService, private toast:ToastrService){}
