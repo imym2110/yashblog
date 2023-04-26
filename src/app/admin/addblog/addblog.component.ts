@@ -22,7 +22,7 @@ export class AddblogComponent {
       description: ['', Validators.required],
       featured_RadioButton : true,
       categories: [0],
-      //image: ''
+      image: ['']
     });                                                                                                        
   }
   ngOnInit(){
@@ -30,23 +30,23 @@ export class AddblogComponent {
   }
   onSubmit(): void {     
     
-    console.log(this.addblogform.value, 'dddd')
+    // console.log(this.addblogform.value, 'dddd')
 
     this.StrapiService.addBlogForm(this.addblogform.value).subscribe(resp=>{
-      console.log(resp, 'RESP')
+      // console.log(resp, 'RESP')
     })
-    console.log('Your details have been submitted', this.addblogform.value);                                                                                                   
+    // console.log('Your details have been submitted', this.addblogform.value);                                                                                                   
     this.blogdetails.push(this.addblogform.value)                                                                                                   
-    console.log('this.blogdetails',this.blogdetails)
+    // console.log('this.blogdetails',this.blogdetails)
     this.addblogform.reset();
   }
 
   getcategory(){
     this.StrapiService.getCategoryData().subscribe(category_data => {
-      console.log(category_data,'data')
+      // console.log(category_data,'data')
       this.category = category_data;
       Object.values(this.category.data).filter(x=>{
-        console.log(x,'x');
+        // console.log(x,'x');
         this.mydata.push(x);
       })
     },()=>{},
@@ -56,6 +56,6 @@ export class AddblogComponent {
       // });
     }
     );
-    console.log(this.mydata);
+    // console.log(this.mydata);
   }
 }

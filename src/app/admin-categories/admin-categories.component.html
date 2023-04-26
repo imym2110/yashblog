@@ -1,0 +1,32 @@
+<section class="container mt-4 mb-4">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">ID</th>
+				<th scope="col">Title</th>
+				<th scope="col">Image</th>
+				<th scope="col">Created</th>
+				<th scope="col">Updated</th>
+				<th scope="col">Delete</th>
+				<th scope="col">Update</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let data of allCategoryData">
+				<th scope="row">{{ data.id }}</th>
+				<td>
+					{{ data.attributes?.category_title }}
+				</td>
+				<td *ngFor="let img of data.attributes?.category_image?.data">
+					<img class="img" [src]="this.apiUrl + img.attributes.url" [alt]="img.attributes.name">
+				</td>
+				<td class="date_created">{{data.attributes?.createdAt | date:'dd-MM-yyyy'}}</td>
+				<td class="date_created">{{data.attributes?.updatedAt | date:'dd-MM-yyyy'}}</td>
+				<td class="function"><button (click)="deletecatgItem(data.id)" class="delete_button bg-danger"><i
+							class="fa-solid fa-trash"></i></button></td>
+				<td class="function"><button (click)="updateBlogItem(data.id)" class="update_button bg-success"><i
+							class="fa-solid fa-pen"></i></button></td>
+			</tr>
+		</tbody>
+	</table>
+</section>

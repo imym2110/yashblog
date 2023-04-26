@@ -9,13 +9,13 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  isLogOutFlag : boolean = false;
+  isLogOutFlag : boolean = true;
 
   constructor(private router: Router, private authservice:AuthService, private toast:ToastrService){}
 
   logOut() {
     this.authservice.isAuthenticate = false;
-    this.isLogOutFlag = true;
+    this.isLogOutFlag = false;
     localStorage.removeItem('token');
     this.toast.success("Logged Out Successfully")
     this.router.navigate(['']);

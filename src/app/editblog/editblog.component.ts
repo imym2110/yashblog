@@ -43,29 +43,29 @@ export class EditblogComponent {
 
   getcategory(){
     this.strapiservice.getCategoryData().subscribe(category_data => {
-      console.log(category_data,'data')
+      // console.log(category_data,'data')
       this.category = category_data;
       Object.values(this.category.data).filter(x=>{
-        console.log(x,'x');
+        // console.log(x,'x');
         this.mydata.push(x);
       })
     });
-    console.log(this.mydata);
+    // console.log(this.mydata);
   }
 
     editBlogDetails(blogid: number): void {
-      console.log(this.editblogform.value, 'dddd')
-      console.log(blogid, 'id');
+      // console.log(this.editblogform.value, 'dddd')
+      // console.log(blogid, 'id');
       
 
     this.strapiservice.editBlog(this.editblogform.value, blogid).subscribe(resp => {
-        console.log(resp, 'RESP')
+        // console.log(resp, 'RESP')
         this.toast.success('Updated successfully')
-        this.router.navigate(['admin'])
+        this.router.navigate(['admin/blogs'])
       })
-    console.log('Your details have been submitted', this.editblogform.value);
+    // console.log('Your details have been submitted', this.editblogform.value);
       this.blogdetails.push(this.editblogform.value)                                                                                                   
-    console.log('this.blogdetails', this.blogdetails)
+    // console.log('this.blogdetails', this.blogdetails)
     this.editblogform.reset();
     }
   }

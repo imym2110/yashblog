@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
 
   categories() {
     this.strapiservice.getselectedcategory(5).subscribe(category_data => {
-      console.log(category_data,'data')
+      // console.log(category_data,'data')
       this.category = category_data;
       Object.values(this.category.data).filter(x=>{
         //console.log(x,'x');
@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
 
   getAllarticles(){
     this.strapiservice.getselectedcategory(5).subscribe(blog => {
-      console.log(blog,'blog_data')
+      // console.log(blog,'blog_data')
       this.getblogs = blog;
       Object.values(this.getblogs.data).filter(x=>{
         //console.log(x,'x');
@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit {
 
   featuredBlogs(){
     this.strapiservice.getFeaturedBlog(4,true).subscribe(blog => {
-      console.log(blog,'feat_blog_data')
+      // console.log(blog,'feat_blog_data')
       this.getblogs = blog;
       Object.values(this.getblogs.data).filter(x=>{
         //console.log(x,'x');
@@ -75,7 +75,7 @@ export class HomeComponent implements OnInit {
 
   cssBlogsData(){
     this.strapiservice.getBlogByCategory(4,'CSS').subscribe(blog => {
-      console.log(blog,'css_blog_data')
+      // console.log(blog,'css_blog_data')
       this.getblogs = blog;
       Object.values(this.getblogs.data).filter(x=>{
         //console.log(x,'x');
@@ -86,7 +86,7 @@ export class HomeComponent implements OnInit {
 
   jsBlogsData(){
     this.strapiservice.getBlogByCategory(4,'Javascript').subscribe(blog => {
-      console.log(blog,'js_blog_data')
+      // console.log(blog,'js_blog_data')
       this.getblogs = blog;
       Object.values(this.getblogs.data).filter(x=>{
         //console.log(x,'x');
@@ -97,7 +97,7 @@ export class HomeComponent implements OnInit {
 
   reactBlogsData(){
     this.strapiservice.getBlogByCategory(4,'React JS').subscribe(blog => {
-      console.log(blog,'react_blog_data')
+      // console.log(blog,'react_blog_data')
       this.getblogs = blog;
       Object.values(this.getblogs.data).filter(x=>{
         //console.log(x,'x');

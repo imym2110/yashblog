@@ -1,0 +1,34 @@
+@import "../../assets/custom-colors.scss";
+
+
+
+
+.img{
+    width: 25%;
+}
+
+.delete_button{
+    border: none;
+    color: $white;
+    padding: 7px 10px;
+    border-radius: 8px;
+
+    .delete_image{
+        width: 30px;
+    }
+}
+
+.function{
+    width: 5%;
+}
+.update_button{
+    border: none;
+    padding: 7px 10px;
+    font-weight: 500;
+    color: $white;
+    border-radius: 8px;
+
+    .edit_image{
+        width: 30px;
+    }
+}

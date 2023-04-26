@@ -21,7 +21,7 @@ export class DemocardComponent implements OnInit{
   @Input() demoblogsdata : any
 
   ngOnInit(){
-    console.log(this.demoblogsdata, "demo-data");
+    // console.log(this.demoblogsdata, "demo-data");
   }
 
     // ngOnChanges(changes: SimpleChanges): void {

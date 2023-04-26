@@ -14,26 +14,49 @@
 
                     </li>
                     <li>
-                        <a class="header-link" routerLink="/admin">Administration</a>
+                        <div class="dropdown  navbar-dropdown">
+                            <br />
+                            <div ngbDropdown>
+                                <button class="dropdown-toggle btn navbar-dropdown-button" id="menu" ngbDropdownToggle>
+                                    Admin
+                                </button>
+                                <div class="dropdown-menu" ngbDropdownMenu="menu">
+                                    <button class="dropdown-item" ngbDropdownItem routerLink="/admin/blogs">Blog</button>
+                                    <button class="dropdown-item" ngbDropdownItem routerLink="/admin/categories">Categories</button>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li>
-                        <a class="header-link" routerLink="/admin/addblog">Add</a>
+                        <!-- <a class="header-link" routerLink="/admin/addblog">Addblog</a> -->
+                        <div class="dropdown  navbar-dropdown">
+                            <br />
+                            <div ngbDropdown>
+                                <button class="dropdown-toggle btn navbar-dropdown-button" id="menu" ngbDropdownToggle>
+                                    Add
+                                </button>
+                                <div class="dropdown-menu" ngbDropdownMenu="menu">
+                                    <button class="dropdown-item" ngbDropdownItem routerLink="/admin/addblog">Add-Blog</button>
+                                    <button class="dropdown-item" ngbDropdownItem routerLink="/admin/addcategory">Add-Categories</button>
+                                </div>
+                            </div>
+                        </div>
                     </li>
 
 
-                    <li *ngIf="isLogOutFlag">
+                    <li *ngIf="!isLogOutFlag">
                         <a class="header-button" routerLink="/login">
                             <img src="../../assets/images/simple-icons_buymeacoffee.png" class="list-images" alt="coffee"> Login</a>
                     </li>
 
-                    <li *ngIf="!isLogOutFlag">
+                    <li *ngIf="isLogOutFlag">
                         <a class="header-button" href="javascript:void(0);" (click)="logOut()">
                         <img src="../../assets/images/simple-icons_buymeacoffee.png" class="list-images" alt="coffee"> Logout</a>
                     </li>
 
                 </ul>
             </div>
-            <div class="col-lg-4 col-md-4 dropdown">
+            <div class="col-lg-4 col-md-4 dropdown dropdown-main">
                 <br />
                 <div ngbDropdown>
                     <button class="dropdown-toggle btn dropdown-button" id="menu" ngbDropdownToggle>
@@ -42,9 +65,11 @@
                     <div class="dropdown-menu" ngbDropdownMenu="menu">
                         <button class="dropdown-item" ngbDropdownItem routerLink="/home">HOME</button>
                         <button class="dropdown-item" ngbDropdownItem routerLink="/categories">CATEGORY</button>
-                        <button class="dropdown-item" ngbDropdownItem>ABOUT ME</button>
-                        <button class="dropdown-item" ngbDropdownItem>SEARCH</button>
-                        <button class="dropdown-item" ngbDropdownItem routerLink="/login">LOGIN</button>
+                        <button class="dropdown-item" ngbDropdownItem routerLink="/admin/blogs">Admin-Blog</button>
+                        <button class="dropdown-item" ngbDropdownItem routerLink="/admin/categories">Admin-Category</button>
+                        <button class="dropdown-item" ngbDropdownItem routerLink="/admin/addblog">Addblog</button>
+                        <button class="dropdown-item" ngbDropdownItem routerLink="/login" *ngIf="!isLogOutFlag">Login</button>
+                        <button class="dropdown-item" ngbDropdownItem routerLink="/login" *ngIf="isLogOutFlag" (click)="logOut()">Logout</button>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { StrapiService } from '../services/strapi.service';
 
@@ -10,7 +11,7 @@ import { StrapiService } from '../services/strapi.service';
 export class AdministrationComponent  {
   getblogs: any;
   allblogData: any[] = [];
-  constructor(private strapiservice: StrapiService, private toast: ToastrService) {
+  constructor(private strapiservice: StrapiService, private toast: ToastrService, private router:Router) {
 
   }
   ngOnInit() {

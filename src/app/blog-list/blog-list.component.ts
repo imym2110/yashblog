@@ -60,7 +60,7 @@ export class BlogListComponent {
   featuredCategories()
   {
     this.strapiservice.getAllFeaturedBlog(true).subscribe(blog => {
-      console.log(blog,'react_blog_data')
+      // console.log(blog,'react_blog_data')
       this.getblogs = blog;
       Object.values(this.getblogs.data).filter(x=>{
         //console.log(x,'x');

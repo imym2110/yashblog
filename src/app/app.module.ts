@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbAlertModule, NgbModule, NgbPaginationModule, NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbAlertModule, NgbDropdownMenu, NgbModule, NgbPaginationModule, NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { SubscribeSectionComponent } from './subscribe-section/subscribe-section.component';
@@ -28,6 +28,8 @@ import { AdministrationComponent } from './administration/administration.compone
 import { StrapiTableComponent } from './strapi-table/strapi-table.component';
 import { DecimalPipe, NgFor } from '@angular/common';
 import { EditblogComponent } from './editblog/editblog.component';
+import { AdminCategoriesComponent } from './admin-categories/admin-categories.component';
+import { EditcategoryComponent } from './editcategory/editcategory.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { EditblogComponent } from './editblog/editblog.component';
     AdministrationComponent,
     StrapiTableComponent,
     EditblogComponent,
+    AdminCategoriesComponent,
+    EditcategoryComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +67,7 @@ import { EditblogComponent } from './editblog/editblog.component';
     NgbPaginationModule,
     DecimalPipe,
     NgFor,
+    NgbDropdownMenu
     //NgxScrollTopModule
   ],
   providers: [

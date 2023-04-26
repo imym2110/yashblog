@@ -24,7 +24,7 @@ export class RegisterComponent {
   }
   onSubmit() {
     this.strapiservice.registerUser(this.form.value).subscribe((data) => {
-      console.log(data);
+      // console.log(data);
       this.toast.success("You are registered")
       this.router.navigate(['/login'])
     })

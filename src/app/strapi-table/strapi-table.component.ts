@@ -16,12 +16,12 @@ export class StrapiTableComponent implements OnInit {
 	constructor(private strapiservice: StrapiService, private toast: ToastrService, private router: Router) { }
 
 	ngOnInit() {
-		console.log(this.strapitable, 'strapitable-data');
+		// console.log(this.strapitable, 'strapitable-data');
 		//	console.log(this.strapitable.id);
 	}
 
 	deleteBlogItem(blogid: number) {
-		console.log(blogid)
+		// console.log(blogid)
 		
 		if ((confirm("Delete this Record?")) && blogid) {
 			this.strapiservice.deleteBlog(blogid).subscribe(() => {
@@ -32,9 +32,9 @@ export class StrapiTableComponent implements OnInit {
 	}
 
 	updateBlogItem(blogid: number) {
-		console.log(blogid);
+		// console.log(blogid);
 		if (blogid) {
-			this.router.navigate(['edit', blogid])
+			this.router.navigate(['edit-blog', blogid])
 		}
 	}
 }

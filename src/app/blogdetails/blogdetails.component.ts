@@ -23,7 +23,7 @@ export class BlogdetailsComponent {
 
   ngOnInit(): void{
     const currentblogid = this.activatedRoute.snapshot.params['blogid']
-    console.log(currentblogid)
+    // console.log(currentblogid)
     if(currentblogid == this.activatedRoute.snapshot.params['blogid'])
     {
       this.initBlogDetailDataById(currentblogid);
@@ -35,7 +35,7 @@ export class BlogdetailsComponent {
     this.strapiservice.getBlogDetailById(curBlogID).subscribe(blog => {
       this.getblogs = blog;
       Object.values(this.getblogs.data).filter(x=>{
-        console.log(x,'x');
+        // console.log(x,'x');
         this.allFeaturedData.push(x)
        // this.cards = this.getblogs.data;
         // Object.values(this.cards.categories).filter(y=>{

@@ -59,7 +59,7 @@ export class StrapiService {
   }
 
   addBlogForm(temp: any) {
-    console.log(temp, 'Inservice')
+    // console.log(temp, 'Inservice')
     const url = this.apiUrl + '/api/blogs/?populate=*';
     const body =
     {
@@ -71,18 +71,41 @@ export class StrapiService {
         "categories": [
           temp.categories
         ],
-        // "image" : [
-        //  temp.image
-        // ]
+        // "image" :{
+        //   "data" : [
+        //     temp.image
+        //   ]
+        // }
 
       }
     }
-    console.log(body, 'Safety')
+    // console.log(body, 'Safety')
     const headers = new Headers(
       {
         'Content-Type': 'application/json'
       });
-    console.log(body, "Service")
+    // console.log(body, "Service")
+    return this.http.post(url, body);
+  }
+
+  addCatgform(temp:any){
+    const url = this.apiUrl + '/api/categories/?populate=*';
+    const body =
+    {
+      "data" : {
+        "category_title" : temp.category_title,
+        "image" :{
+          "data" : [
+            temp.image
+          ]
+        }
+      }
+    }
+    const headers = new Headers(
+      {
+        'Content-Type': 'application/json'
+      });
+    // console.log(body, "Service")
     return this.http.post(url, body);
   }
 
@@ -108,20 +131,16 @@ export class StrapiService {
     return this.http.post(url, new_user);
   }
 
-  uploadImage() {
-    const url = this.apiUrl + '/api/upload';
-    const img_upload =
-    {
-
-    }
-  }
-
   deleteBlog(id: any) {
     return this.http.delete(this.apiUrl + '/api/blogs/' + id)
   }
 
+  deleteCatg(id:any){
+    return this.http.delete(this.apiUrl + '/api/categories/' + id)
+  }
+
   editBlog(temp: any, id: any) {
-    console.log(temp, 'Inservice')
+    // console.log(temp, 'Inservice')
     const url = this.apiUrl + '/api/blogs/' + id;
     const body =
     {
@@ -140,12 +159,32 @@ export class StrapiService {
 
       }
     }
-    console.log(body, 'Safety')
+    // console.log(body, 'Safety')
     const headers = new Headers(
       {
         'Content-Type': 'application/json'
       });
-    console.log(body, "Service")
+    // console.log(body, "Service")
+    return this.http.put(url, body);
+  }
+
+
+  editCatg(temp: any, id: any) {
+    // console.log(temp, 'Inservice')
+    const url = this.apiUrl + '/api/categories/' + id;
+    const body =
+    {
+      "data": {
+        "id": temp.id,
+        "category_title": temp.category_title,
+      }
+    }
+    // console.log(body, 'Safety')
+    const headers = new Headers(
+      {
+        'Content-Type': 'application/json'
+      });
+    // console.log(body, "Service")
     return this.http.put(url, body);
   }
 }
