@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
     private router: Router, private fb: FormBuilder, private authservice: AuthService, private toast: ToastrService, private strapiservice: StrapiService
   ) { }
   ngOnInit() {
-    console.log('Authflag', this.authservice?.isAuthenticate)
+    // console.log('Authflag', this.authservice?.isAuthenticate)
 
     if (this.authservice.isAuthenticate === true) {
       this.isLoggedInFlag = true;
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.strapiservice.getUser(this.form.value).subscribe((data:any) => {
-      console.log(data, 'ddddddddddd')
+      // console.log(data, 'ddddddddddd')
       if(data?.jwt){
         localStorage.setItem('token',data.jwt);
         this.authservice.isAuthenticate = true;

@@ -20,12 +20,12 @@ export class AuthService {
   login(): Observable<boolean> {
     if (this.strapiservice.getUser('')) {      
       this.isAuthenticate = true;
-      console.log('Loggedin', this.isAuthenticate)
+      // console.log('Loggedin', this.isAuthenticate)
       return of(true);
     }
     else{
       this.isAuthenticate = false;
-      console.log('Loggedout', this.isAuthenticate)
+      // console.log('Loggedout', this.isAuthenticate)
     return of(false);
     }
   }
