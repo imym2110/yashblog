@@ -1,6 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { environment } from 'src/environments/environment';
 import { StrapiService } from '../services/strapi.service';
 
@@ -23,7 +24,7 @@ export class BlogListComponent {
   alldata:any[]=[];
   categoryidFromURL:any;
 
-  constructor(private datePipe: DatePipe, private strapiservice: StrapiService, private activatedRoute: ActivatedRoute) {
+  constructor(private datePipe: DatePipe, private strapiservice: StrapiService, private activatedRoute: ActivatedRoute, private router : Router, private toast:ToastrService) {
     this.datePipe.transform(this.myDate, 'dd/mm/yyyy');
     //console.log(this.myDate);
   }
@@ -48,9 +49,9 @@ export class BlogListComponent {
 
   nonFeaturedCategories()
   {
-    this.strapiservice.getAllBlogByCatg(this.categoryidFromURL).subscribe(resp=>{
-      Object.values(resp).filter(x=>{
-          x.filter((y: any)=>{
+    this.strapiservice.getAllBlogByCatg(this.categoryidFromURL).subscribe((resp:any)=>{
+      Object.values(resp).filter((x:any)=>{
+          Object.values(x).filter((y: any)=>{
             this.allBlogsData.push(y)
           })
       }) 

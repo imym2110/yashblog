@@ -30,6 +30,7 @@ import { DecimalPipe, NgFor } from '@angular/common';
 import { EditblogComponent } from './editblog/editblog.component';
 import { AdminCategoriesComponent } from './admin-categories/admin-categories.component';
 import { EditcategoryComponent } from './editcategory/editcategory.component';
+import { FileUploadModule } from '@iplab/ngx-file-upload';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { EditcategoryComponent } from './editcategory/editcategory.component';
     NgbPaginationModule,
     DecimalPipe,
     NgFor,
-    NgbDropdownMenu
+    NgbDropdownMenu,
+   // FileUploadModule,
     //NgxScrollTopModule
   ],
   providers: [

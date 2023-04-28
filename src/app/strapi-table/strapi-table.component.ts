@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from 'src/environments/environment';
 import { StrapiService } from '../services/strapi.service';
 
 
@@ -10,6 +11,7 @@ import { StrapiService } from '../services/strapi.service';
 	styleUrls: ['./strapi-table.component.scss']
 })
 export class StrapiTableComponent implements OnInit {
+	apiUrl = environment.apiUrl;
 	@Input() strapitable: any;
 	// id:any
 

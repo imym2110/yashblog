@@ -6,6 +6,8 @@ import { AddblogComponent } from './addblog/addblog.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddcategoryComponent } from './addcategory/addcategory.component';
+import { FileUploadModule } from '@iplab/ngx-file-upload';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -14,10 +16,13 @@ import { AddcategoryComponent } from './addcategory/addcategory.component';
     AddcategoryComponent,
   ],
   imports: [
+    // BrowserModule,
     CommonModule,
     AdminRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    FileUploadModule,
+   // BrowserAnimationsModule
   ]
 })
 export class AdminModule { }

@@ -7,11 +7,27 @@
             <input type="text" class="form-control" id="editCatgTitle" placeholder="title" name="category_title"
                 formControlName="category_title">
         </div>
-        <input type="file" name="category_image" class="add-details mb-3" formControlName="category_image">
+        <div class="text-center">
+            <input class="form-control" type="file" (change)="onChange($event)" />
+            <br />
+            <!-- <button (click)="onUpload()" class="btn btn-success">Upload</button> -->
+        </div>
 
         <div class="mb-3">
             <button class="btn editcatgSubmit" type="submit" (click)="addCatgDetails()">Submit</button>
         </div>
-    
+
     </form>
-    </div>
+</div>
+
+<!-- <div class="text-center">
+    <input class="form-control" type="file" (change)="onChange($event)" />
+    <br />
+    <button (click)="onUpload()" class="btn btn-success">Upload</button>
+  </div>
+  
+Flag variable is used here
+  <div class="container" *ngIf="loading">
+    <h3>Loading ...</h3>
+  </div>
+   -->
