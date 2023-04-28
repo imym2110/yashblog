@@ -31,18 +31,21 @@
         <option *ngFor="let category of mydata" value="{{category.id}}">{{category.attributes?.category_title}}</option>
 
     </select>
-    <!-- <input type="file" name="image" class="add-details" formControlName="image"> -->
+    <div class="text-center">
+        <input class="form-control" type="file" (change)="onChange($event)" />
+        <br />
+    </div>
     <div>
         <p class="mb-1">Feature your blog?</p>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="featured_RadioButton"
-                formControlName="featured_RadioButton" id="isfeatured">
+
+            <input class="form-check-input" type="radio" [value]="true" formControlName="featradio">
             <label class="form-check-label" for="isfeatured">
                 Yes
             </label>
         </div>
         <div class="form-check form-check-inline mb-3">
-            <input class="form-check-input" type="radio" name="featured_RadioButton" id="isnotfeatured">
+            <input class="form-check-input" type="radio" [value]="false" formControlName="featradio">
             <label class="form-check-label" for="isnotfeatured">
                 No
             </label>

@@ -2,7 +2,10 @@
     <form class="login-form" [formGroup]="form">
         <input type="text" id="username" placeholder="Username" class="login-details" formControlName="username"><br>
         <input type="email" id="email" placeholder="Email" class="login-details" formControlName="email"><br>
-        <input type="password" id="password" placeholder="Password" class="login-details" formControlName="password"><br>
-        <button type="submit" class="login-submit" (click)="onSubmit()">Register</button>
+        <show-hide-password size="lg" btnstyle="primary" [btnOutline]="false">
+            <input type="password"  placeholder="password" formControlName="password">
+          </show-hide-password>
+        <span class="disclaimer">Fill Out the form to enable the button</span>
+        <button type="submit" class="login-submit" [disabled]="!form.valid" (click)="onSubmit()">Register</button>
     </form>
 </section>

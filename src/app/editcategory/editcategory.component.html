@@ -13,7 +13,12 @@
             <input type="text" class="form-control" id="editCatgTitle" placeholder="title" name="category_title"
                 formControlName="category_title">
         </div>
-    
+        <div class="text-center">
+            <input class="form-control" type="file" (change)="onChange($event)" />
+            <br />
+            <!-- <button (click)="onUpload()" class="btn btn-success">Upload</button> -->
+        </div>
+
         <div class="mb-3">
             <button class="btn editcatgSubmit" type="submit" (click)="editCatgDetails(this.editcatgform.value.id)">Submit</button>
         </div>

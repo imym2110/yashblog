@@ -5,9 +5,10 @@
       <show-hide-password size="lg" btnstyle="primary" [btnOutline]="false">
         <input type="password"  placeholder="password" formControlName="password">
       </show-hide-password>
-      <button type="submit" class="login-submit"  (click)="onSubmit()">Login</button>
+      <span class="disclaimer">Fill Out the form to enable the button</span>
+      <button type="submit" class="login-submit" [disabled]="!form.valid" (click)="onSubmit()">Login</button>
 
-      <button type="submit" class="register" routerLink="/register">Register</button>
+      <a type="submit" class="register" routerLink="/register">New User?</a>
     </form>
     <!-- <button *ngIf="isLoggedInFlag" class="logout" (click)="logOut()">Logout</button> -->
   </section>
