@@ -12,7 +12,6 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ShowHidePasswordModule } from 'ngx-show-hide-password';
-import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { AllCategoriesComponent } from './all-categories/all-categories.component';
 import { BlogCardsComponent } from './blog-cards/blog-cards.component';
 import { ToastrModule } from 'ngx-toastr';
@@ -54,7 +53,7 @@ import { FileUploadModule } from '@iplab/ngx-file-upload';
     EditcategoryComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, 
     AppRoutingModule,
     NgbModule,
     FormsModule,
@@ -69,8 +68,6 @@ import { FileUploadModule } from '@iplab/ngx-file-upload';
     DecimalPipe,
     NgFor,
     NgbDropdownMenu,
-   // FileUploadModule,
-    //NgxScrollTopModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttperrorInterceptor, multi: true },

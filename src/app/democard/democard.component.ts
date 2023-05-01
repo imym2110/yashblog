@@ -23,17 +23,4 @@ export class DemocardComponent implements OnInit{
   ngOnInit(){
     // console.log(this.demoblogsdata, "demo-data");
   }
-
-    // ngOnChanges(changes: SimpleChanges): void {
-  //   if (changes['blogsdata']) {
-  //     let abc = changes;
-  //     console.log(abc, 'badfuwgqfjksbjk');
-
-  //   }
-  //   else {
-  //     console.log('Data not received')
-  //   }
-  // }
-
-
 }

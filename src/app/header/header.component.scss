@@ -4,10 +4,7 @@ header{
     box-shadow: 4px 6px 13px rgba(215, 215, 215, 0.25);
     background: $light-grey-1;
 }
-// .header-container{
-//     padding-bottom: 20px;
-//     width: 1250px;
-// }
+
 .row{
     justify-content: space-between;
 }
@@ -66,7 +63,7 @@ header{
     }
 }
 .list-images{
-    padding: 0px 5px 5px 0px;
+    padding: 5px 10px 5px 0px;
 }
 .header-button{
     display: flex;

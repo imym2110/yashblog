@@ -23,7 +23,7 @@ export class HttperrorInterceptor implements HttpInterceptor {
           // console.log('This is client side error');
           errorMsg = `Error: ${error.error.message}`;
         } else {
-          console.log(error, 'kjklhkh')
+          // console.log(error, 'kjklhkh')
           // console.log(error.error.error.details.errors.length);
           
           this.toastr.error(error.error.error.message)

@@ -14,7 +14,6 @@ export class BlogdetailsComponent {
   apiUrl = environment.apiUrl;
   getblogs: any;
   allFeaturedData: any[]=[];
- // blogidFromURL: any;
   cards: any;
   cardDetails: any[]=[];
 
@@ -37,11 +36,6 @@ export class BlogdetailsComponent {
       Object.values(this.getblogs.data).filter(x=>{
         // console.log(x,'x');
         this.allFeaturedData.push(x)
-       // this.cards = this.getblogs.data;
-        // Object.values(this.cards.categories).filter(y=>{
-        //   console.log(y,'y');
-        //   this.allFeaturedData.push(y); 
-        // })
       })
     })
   }

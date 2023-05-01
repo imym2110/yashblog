@@ -27,9 +27,6 @@ export class HomeComponent implements OnInit {
   cssCategoryData:any;
   ngOnInit(): void {
     this.categories();
-    //this.cssblogs();
-    //this.jsblogs();
-    //this.reactblogs();
     this.featuredBlogs();
     this.cssBlogsData();
     this.jsBlogsData();
@@ -65,7 +62,6 @@ export class HomeComponent implements OnInit {
   featuredBlogs(){
     this.strapiservice.getFeaturedBlog(4,true).subscribe((blog:any) => {
       // console.log(blog,'feat_blog_data')
-     // this.getblogs = blog;
       Object.values(blog.data).filter(x=>{
         //console.log(x,'x');
         this.featuredData.push(x);
@@ -76,7 +72,6 @@ export class HomeComponent implements OnInit {
   cssBlogsData(){
     this.strapiservice.getBlogByCategory(4,'CSS').subscribe((blog:any) => {
       // console.log(blog,'css_blog_data')
-      //this.getblogs = blog;
       Object.values(blog.data).filter(x=>{
         //console.log(x,'x');
         this.cssData.push(x);
@@ -87,7 +82,6 @@ export class HomeComponent implements OnInit {
   jsBlogsData(){
     this.strapiservice.getBlogByCategory(4,'Javascript').subscribe((blog:any) => {
       // console.log(blog,'js_blog_data')
-      //this.getblogs = blog;
       Object.values(blog.data).filter(x=>{
         //console.log(x,'x');
         this.jsData.push(x);
@@ -98,7 +92,6 @@ export class HomeComponent implements OnInit {
   reactBlogsData(){
     this.strapiservice.getBlogByCategory(4,'React JS').subscribe((blog:any) => {
       // console.log(blog,'react_blog_data')
-      // this.getblogs = blog;
       Object.values(blog.data).filter(x=>{
         //console.log(x,'x');
         this.reactData.push(x);
