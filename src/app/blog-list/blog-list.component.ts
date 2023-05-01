@@ -15,55 +15,48 @@ import { StrapiService } from '../services/strapi.service';
 })
 export class BlogListComponent {
 
-  //isFeatData:boolean=false
   apiUrl = environment.apiUrl;
   myDate = new Date();
   getblogs: any;
-  allBlogsData:any[]=[];
-  allFeaturedData:any[]=[];
-  alldata:any[]=[];
-  categoryidFromURL:any;
+  allBlogsData: any[] = [];
+  allFeaturedData: any[] = [];
+  alldata: any[] = [];
+  categoryidFromURL: any;
 
-  constructor(private datePipe: DatePipe, private strapiservice: StrapiService, private activatedRoute: ActivatedRoute, private router : Router, private toast:ToastrService) {
+  constructor(private datePipe: DatePipe, private strapiservice: StrapiService, private activatedRoute: ActivatedRoute, private router: Router, private toast: ToastrService) {
     this.datePipe.transform(this.myDate, 'dd/mm/yyyy');
     //console.log(this.myDate);
   }
 
 
-  ngOnInit(){
+  ngOnInit() {
     //console.log(this.route.param, 'route');
     this.activatedRoute.paramMap.subscribe((params) => {
       this.categoryidFromURL = params.get('catid');
-      if(this.categoryidFromURL === 'FeaturedBlogs')
-      {   
-        //  this.isFeatData = true;
-          this.featuredCategories(); 
+      if (this.categoryidFromURL === 'FeaturedBlogs') {
+        this.featuredCategories();
       }
-      else
-      {
-        // this.isFeatData = false;
-        this.nonFeaturedCategories(); 
+      else {
+        this.nonFeaturedCategories();
       }
-    });  
+    });
   }
 
-  nonFeaturedCategories()
-  {
-    this.strapiservice.getAllBlogByCatg(this.categoryidFromURL).subscribe((resp:any)=>{
-      Object.values(resp).filter((x:any)=>{
-          Object.values(x).filter((y: any)=>{
-            this.allBlogsData.push(y)
-          })
-      }) 
+  nonFeaturedCategories() {
+    this.strapiservice.getAllBlogByCatg(this.categoryidFromURL).subscribe((resp: any) => {
+      Object.values(resp).filter((x: any) => {
+        x.filter((y: any) => {
+          this.allBlogsData.push(y)
+        })
+      })
     })
   }
 
-  featuredCategories()
-  {
+  featuredCategories() {
     this.strapiservice.getAllFeaturedBlog(true).subscribe(blog => {
       // console.log(blog,'react_blog_data')
       this.getblogs = blog;
-      Object.values(this.getblogs.data).filter(x=>{
+      Object.values(this.getblogs.data).filter(x => {
         //console.log(x,'x');
         this.allFeaturedData.push(x);
       })

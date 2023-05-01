@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/services/auth.service';
 import { StrapiService } from 'src/app/services/strapi.service';
 
 
@@ -20,7 +21,7 @@ export class AddblogComponent {
   image_id = 0;
 
 
-  constructor(private detail: FormBuilder, private StrapiService: StrapiService, private toast: ToastrService, private route: Router) {
+  constructor(private detail: FormBuilder, private StrapiService: StrapiService, private toast: ToastrService, private route: Router, private authservice: AuthService) {
     this.addblogform = this.detail.group({
       title: [''],
       summary: ['', Validators.required],
@@ -34,6 +35,7 @@ export class AddblogComponent {
     this.getcategory();
   }
   onSubmit(): void {
+
     // console.log(this.addblogform.value, 'testdat')
     if (this.file) {
       this.loading = !this.loading;
@@ -50,7 +52,6 @@ export class AddblogComponent {
           this.loading = false;
           // console.log('complete');
           this.addblogform.value.image = this.image_id;
-          //JSON.stringify(this.addblogform.value.featured_RadioButton)
           // console.log(this.addblogform.value, 'testtt');
           this.postform();
         }
@@ -81,7 +82,6 @@ export class AddblogComponent {
       // console.log(resp, 'RESP')
     })
     // console.log('Your details have been submitted', this.addblogform.value);                                                                                                   
-    //this.blogdetails.push(this.addblogform.value)
     // console.log('this.blogdetails', this.blogdetails)
     this.toast.success('Updated successfully')
         this.route.navigate(['admin/blogs'])

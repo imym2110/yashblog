@@ -13,10 +13,10 @@
                         <a class="header-link" routerLink="/categories">Category</a>
 
                     </li>
-                    <li>
+                    <li *ngIf="tempIsLog">
                         <div class="dropdown  navbar-dropdown">
                             <br />
-                            <div ngbDropdown>
+                            <div ngbDropdown >
                                 <button class="dropdown-toggle btn navbar-dropdown-button" id="menu" ngbDropdownToggle>
                                     Admin
                                 </button>
@@ -27,8 +27,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>
-                        <!-- <a class="header-link" routerLink="/admin/addblog">Addblog</a> -->
+                    <li *ngIf="tempIsLog">
                         <div class="dropdown  navbar-dropdown">
                             <br />
                             <div ngbDropdown>
@@ -44,14 +43,14 @@
                     </li>
 
 
-                    <li *ngIf="!isLogOutFlag">
+                    <li *ngIf="!tempIsLog">
                         <a class="header-button" routerLink="/login">
-                            <img src="../../assets/images/simple-icons_buymeacoffee.png" class="list-images" alt="coffee"> Login</a>
+                            <i class="fa-regular fa-user list-images"></i> Login</a>
                     </li>
 
-                    <li *ngIf="isLogOutFlag">
-                        <a class="header-button" href="javascript:void(0);" (click)="logOut()">
-                        <img src="../../assets/images/simple-icons_buymeacoffee.png" class="list-images" alt="coffee"> Logout</a>
+                    <li *ngIf="tempIsLog">
+                        <a class="header-button" routerLink="/login" (click)="logOut()">
+                            <i class="fa-regular fa-user list-images"></i> Logout</a>
                     </li>
 
                 </ul>
@@ -68,8 +67,9 @@
                         <button class="dropdown-item" ngbDropdownItem routerLink="/admin/blogs">Admin-Blog</button>
                         <button class="dropdown-item" ngbDropdownItem routerLink="/admin/categories">Admin-Category</button>
                         <button class="dropdown-item" ngbDropdownItem routerLink="/admin/addblog">Addblog</button>
-                        <button class="dropdown-item" ngbDropdownItem routerLink="/login" *ngIf="!isLogOutFlag">Login</button>
-                        <button class="dropdown-item" ngbDropdownItem routerLink="/login" *ngIf="isLogOutFlag" (click)="logOut()">Logout</button>
+                        <button class="dropdown-item" ngbDropdownItem routerLink="/admin/addcategory">Addcategory</button>
+                        <button class="dropdown-item" ngbDropdownItem routerLink="/login" *ngIf="!tempIsLog">Login</button>
+                        <button class="dropdown-item" ngbDropdownItem routerLink="/login" *ngIf="tempIsLog" (click)="logOut()">Logout</button>
                     </div>
                 </div>
             </div>
