@@ -26,7 +26,9 @@ export class StrapiService {
   getCategoryData() {
     return this.http.get(this.apiUrl + '/api/categories?populate=*')
   }
-
+  getCategoryById(id:number){
+    return this.http.get(this.apiUrl + '/api/categories/' +id)
+  }
   getselectedcategory(page: any) {
     return this.http.get(this.apiUrl + '/api/categories?pagination[limit]=' + page + '&populate=*')
   }
@@ -61,6 +63,10 @@ export class StrapiService {
 
   getImage(id:number){
     return this.http.get(this.apiUrl + '/api/upload/files/'+id)
+  }
+
+  getUserCount(){
+    return this.http.get(this.apiUrl + '/api/users/count')
   }
 
   addBlogForm(temp: any) {

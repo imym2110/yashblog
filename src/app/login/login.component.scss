@@ -1,4 +1,4 @@
-@import "../../assets/custom-colors.scss" ;
+@import "../../assets/custom-colors.scss";
 
 
 
@@ -31,21 +31,22 @@
     border: none;
     transition: all 0.1s linear 0.1s;
 
-    &:hover{
+    &:hover {
         background-color: $orange;
     }
 }
 
-.register{
+.register {
     font-size: 18px;
     font-weight: 700;
-   text-decoration: none;
-   color: $black;
-   padding: 5px;
-   margin: 10px 10px 1px 10px;
+    text-decoration: none;
+    color: $black;
+    padding: 5px;
+    margin: 10px 10px 1px 10px;
 }
 
-.logout{
+
+.logout {
     background-color: $blue;
     color: $white;
     border-radius: 10px;
@@ -57,7 +58,7 @@
     justify-content: center;
 }
 
-.disclaimer{
+.disclaimer {
     color: $orange;
     font-weight: 700;
     padding: 7px;
@@ -68,18 +69,20 @@ $breakpoint-tablet: 1199px;
 
 @media (max-width: $breakpoint-tablet) {
 
-    .login-form{
+    .login-form {
         align-items: center;
         min-width: 250px;
     }
-    .login-details{
+
+    .login-details {
         min-width: 179px;
     }
-    p{
+
+    p {
         min-width: 140px;
     }
-    .login-submit{
+
+    .login-submit {
         min-width: 165px;
     }
 }
-

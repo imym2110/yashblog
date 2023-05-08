@@ -19,12 +19,14 @@ export class LoginComponent implements OnInit {
   isLoggedInFlag: boolean = false;
   isSubmitted: boolean = false;
   isValidUser: boolean = false;
+  
   form: FormGroup = new FormGroup({});
   constructor(
     private router: Router, private fb: FormBuilder, private authservice: AuthService, private toast: ToastrService, private strapiservice: StrapiService,
   ) { }
   ngOnInit() {
     // console.log('Authflag', this.authservice?.isAuthenticate)
+    
 
     if (this.authservice.isAuthenticate === true) {
       this.isLoggedInFlag = true;
@@ -48,6 +50,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/admin/addblog']);
       }
     })
-    
   }
+
+  
 }
