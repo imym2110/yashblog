@@ -10,15 +10,23 @@
                     <img class="footer-images" src="../../assets/images/instagram.png" alt="Instagram">
                     <img class="footer-images" src="../../assets/images/linkedin.png" alt="LinkedIn">
                 </div>
+                <p class="userCount"><strong>Active Subscribers</strong> : {{this.userCount}}</p>
             </div>
             <div class="col-lg-8">
                 <div class="footer-columns responsive-column-2">
                     <div class="footer-subcolumn">
-                        <p class="footer-subheading">CATEGORY</p>
-                        <p class="footer-content">CSS</p>
-                        <p class="footer-content">Javascript</p>
-                        <p class="footer-content">Tailwind</p>
-                        <p class="footer-content">React JS</p>
+                        <p class="footer-subheading">BROWSE BY CATEGORY</p>
+                        <ng-container *ngFor="let data of category?.data">
+
+                            <a *ngIf="data?.attributes?.category_title === 'CSS'" class="footer-content"
+                                [routerLink]="['/bloglist',data?.attributes?.category_title]">CSS</a>
+                            <a *ngIf="data?.attributes?.category_title === 'Tailwind'" class="footer-content"
+                                [routerLink]="['/bloglist',data?.attributes?.category_title]">Tailwind</a>
+                            <a *ngIf="data?.attributes?.category_title === 'Java'" class="footer-content"
+                                [routerLink]="['/bloglist',data?.attributes?.category_title]">Java</a>
+                            <a *ngIf="data?.attributes?.category_title === 'Angular'" class="footer-content"
+                                [routerLink]="['/bloglist',data?.attributes?.category_title]">Angular</a>
+                        </ng-container>
                     </div>
 
                     <div class="footer-subcolumn">
@@ -47,14 +55,14 @@
         <hr>
         <div class="row">
             <div class="col-lg-6 subfooter">
-                <p>© 2022 Digitaldastin</p>
+                <p><i class="fa-regular fa-copyright"></i>2023 Yash Blog.</p>
             </div>
             <div class="col-lg-6 subfooter footer-love">
-                <p>Made With ❤️ Gujarat, India</p>
+                <p> All Rights Reserved.</p>
             </div>
         </div>
         <button class="scroll-top" (click)="onClick()">
-            <img  src="../../assets/images/scroll-button.png" alt="top">
+            <img src="../../assets/images/scroll-button.png" alt="top">
         </button>
     </div>
 </footer>

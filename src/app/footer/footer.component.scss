@@ -39,9 +39,16 @@
 }
 
 .footer-content {
+    display: flex;
+    flex-direction: column;
     font-size: 18px;
     font-weight: 400;
+    text-decoration: none;
+    color: $black;
+    font-weight: 600;
+    padding-top: 5px;
 }
+
 
 .footer-links {
     font-size: 18px;
@@ -56,6 +63,13 @@
 .footer-love {
     justify-content: flex-end;
     display: flex;
+}
+.userCount {
+    font-size: 18px;
+    font-weight: 600;
+    // padding: 5px;
+    margin-top: 10px;
+    // margin: 10px 10px 1px 10px;
 }
 .scroll-top
 {
