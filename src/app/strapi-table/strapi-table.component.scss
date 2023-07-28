@@ -1,0 +1,39 @@
+@import "../../assets/custom-colors.scss";
+
+
+.img{
+    border-radius: 95%;
+    width: 50%;
+    transition: all 0.1s linear 0.1s;
+
+    &:hover{
+        border-radius: 50%;
+        width: 70%;
+    }
+}
+
+.date_created{
+    width: 40%;
+}
+
+.delete_button{
+    border: none;
+    color: $white;
+    padding: 7px 10px;
+    border-radius: 8px;
+
+    .delete_image{
+        width: 30px;
+    }
+}
+.update_button{
+    border: none;
+    padding: 7px 10px;
+    font-weight: 500;
+    color: $white;
+    border-radius: 8px;
+
+    .edit_image{
+        width: 30px;
+    }
+}

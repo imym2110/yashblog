@@ -13,28 +13,49 @@
                         <a class="header-link" routerLink="/categories">Category</a>
 
                     </li>
-                    <li>
-                        <a class="header-link" href="javascript:void(0);">Administration</a>
+                    <li *ngIf="tempIsLog">
+                        <div class="dropdown  navbar-dropdown">
+                            <br />
+                            <div ngbDropdown >
+                                <button class="dropdown-toggle btn navbar-dropdown-button" id="menu" ngbDropdownToggle>
+                                    Admin
+                                </button>
+                                <div class="dropdown-menu" ngbDropdownMenu="menu">
+                                    <button class="dropdown-item" ngbDropdownItem routerLink="/admin/blogs">Blog</button>
+                                    <button class="dropdown-item" ngbDropdownItem routerLink="/admin/categories">Categories</button>
+                                </div>
+                            </div>
+                        </div>
                     </li>
-                    <li>
-                        <img src="../../assets/images/search.png" class="list-images" alt="search">
-                        <a class="header-link" href="javascript:void(0);">Search</a>
+                    <li *ngIf="tempIsLog">
+                        <div class="dropdown  navbar-dropdown">
+                            <br />
+                            <div ngbDropdown>
+                                <button class="dropdown-toggle btn navbar-dropdown-button" id="menu" ngbDropdownToggle>
+                                    Add
+                                </button>
+                                <div class="dropdown-menu" ngbDropdownMenu="menu">
+                                    <button class="dropdown-item" ngbDropdownItem routerLink="/admin/addblog">Add-Blog</button>
+                                    <button class="dropdown-item" ngbDropdownItem routerLink="/admin/addcategory">Add-Categories</button>
+                                </div>
+                            </div>
+                        </div>
                     </li>
 
 
-                    <li>
+                    <li *ngIf="!tempIsLog">
                         <a class="header-button" routerLink="/login">
-                            <img src="../../assets/images/simple-icons_buymeacoffee.png" class="list-images" alt="coffee"> Login</a>
+                            <i class="fa-regular fa-user list-images"></i> Login</a>
                     </li>
 
-                    <!-- <li *ngIf="!isLogOutFlag">
-                        <a class="header-button" href="javascript:void(0);" (click)="logOut()">
-                        <img src="../../assets/images/simple-icons_buymeacoffee.png" class="list-images" alt="coffee"> Logout</a>
-                    </li> -->
+                    <li *ngIf="tempIsLog">
+                        <a class="header-button" routerLink="/login" (click)="logOut()">
+                            <i class="fa-regular fa-user list-images"></i> Logout</a>
+                    </li>
 
                 </ul>
             </div>
-            <div class="col-lg-4 col-md-4 dropdown">
+            <div class="col-lg-4 col-md-4 dropdown dropdown-main">
                 <br />
                 <div ngbDropdown>
                     <button class="dropdown-toggle btn dropdown-button" id="menu" ngbDropdownToggle>
@@ -43,44 +64,15 @@
                     <div class="dropdown-menu" ngbDropdownMenu="menu">
                         <button class="dropdown-item" ngbDropdownItem routerLink="/home">HOME</button>
                         <button class="dropdown-item" ngbDropdownItem routerLink="/categories">CATEGORY</button>
-                        <button class="dropdown-item" ngbDropdownItem>ABOUT ME</button>
-                        <button class="dropdown-item" ngbDropdownItem>SEARCH</button>
-                        <button class="dropdown-item" ngbDropdownItem routerLink="/login">LOGIN</button>
+                        <button class="dropdown-item" ngbDropdownItem routerLink="/admin/blogs">Admin-Blog</button>
+                        <button class="dropdown-item" ngbDropdownItem routerLink="/admin/categories">Admin-Category</button>
+                        <button class="dropdown-item" ngbDropdownItem routerLink="/admin/addblog">Addblog</button>
+                        <button class="dropdown-item" ngbDropdownItem routerLink="/admin/addcategory">Addcategory</button>
+                        <button class="dropdown-item" ngbDropdownItem routerLink="/login" *ngIf="!tempIsLog">Login</button>
+                        <button class="dropdown-item" ngbDropdownItem routerLink="/login" *ngIf="tempIsLog" (click)="logOut()">Logout</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </header>
-
-<!-- <nav class="navbar navbar-expand-md" aria-label="Fourth navbar example">
-    <div class="container">
-      <a class="navbar-brand" href="#">Expand at md</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarsExample04">
-        <ul class="navbar-nav ms-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-        </ul>
-        
-      </div>
-    </div>
-  </nav> -->

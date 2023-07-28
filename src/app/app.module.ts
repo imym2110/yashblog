@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbAlertModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbAlertModule, NgbDropdownMenu, NgbModule, NgbPaginationModule, NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { SubscribeSectionComponent } from './subscribe-section/subscribe-section.component';
@@ -12,7 +12,6 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ShowHidePasswordModule } from 'ngx-show-hide-password';
-import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { AllCategoriesComponent } from './all-categories/all-categories.component';
 import { BlogCardsComponent } from './blog-cards/blog-cards.component';
 import { ToastrModule } from 'ngx-toastr';
@@ -24,6 +23,13 @@ import { BlogdetailsComponent } from './blogdetails/blogdetails.component';
 import { LoaderComponent } from './loader/loader.component';
 import { LoaderInterceptor } from './loader.interceptor';
 import { RegisterComponent } from './register/register.component';
+import { AdministrationComponent } from './administration/administration.component';
+import { StrapiTableComponent } from './strapi-table/strapi-table.component';
+import { DecimalPipe, NgFor } from '@angular/common';
+import { EditblogComponent } from './editblog/editblog.component';
+import { AdminCategoriesComponent } from './admin-categories/admin-categories.component';
+import { EditcategoryComponent } from './editcategory/editcategory.component';
+import { FileUploadModule } from '@iplab/ngx-file-upload';
 
 @NgModule({
   declarations: [
@@ -40,9 +46,14 @@ import { RegisterComponent } from './register/register.component';
     BlogdetailsComponent,
     LoaderComponent,
     RegisterComponent,
+    AdministrationComponent,
+    StrapiTableComponent,
+    EditblogComponent,
+    AdminCategoriesComponent,
+    EditcategoryComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, 
     AppRoutingModule,
     NgbModule,
     FormsModule,
@@ -51,8 +62,12 @@ import { RegisterComponent } from './register/register.component';
     ReactiveFormsModule,
     ToastrModule.forRoot(),
     NgbAlertModule,
-    BrowserAnimationsModule
-    //NgxScrollTopModule
+    BrowserAnimationsModule,
+    NgbTypeaheadModule,
+    NgbPaginationModule,
+    DecimalPipe,
+    NgFor,
+    NgbDropdownMenu,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttperrorInterceptor, multi: true },

@@ -22,15 +22,15 @@ export class AllCategoriesComponent {
 
   categories() {
     this.strapiservice.getCategoryData().subscribe(category_data => {
-      console.log(category_data,'data')
+      // console.log(category_data,'data')
       this.category = category_data;
       Object.values(this.category.data).filter(x=>{
-        console.log(x,'x');
+        // console.log(x,'x');
         this.mydata.push(x);
       })
     }
     );
-    console.log(this.mydata);
+    // console.log(this.mydata);
   }
 
 }

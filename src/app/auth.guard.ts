@@ -21,7 +21,7 @@ export class AuthGuard  {
       return true;
     } 
     else {
-      console.log('hi')
+      // console.log('hi')
       this.toast.warning("Please Login")
       return false;
     }

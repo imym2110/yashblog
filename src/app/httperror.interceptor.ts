@@ -20,10 +20,13 @@ export class HttperrorInterceptor implements HttpInterceptor {
       catchError((error: HttpErrorResponse) => {
         let errorMsg = '';
         if (error.error instanceof ErrorEvent) {
-          console.log('This is client side error');
+          // console.log('This is client side error');
           errorMsg = `Error: ${error.error.message}`;
         } else {
-          this.toastr.error(error.message)
+          // console.log(error, 'kjklhkh')
+          // console.log(error.error.error.details.errors.length);
+          
+          this.toastr.error(error.error.error.message)
         }
         return throwError(() => errorMsg);
       })

@@ -1,0 +1,20 @@
+<div>
+    <form class="container editcatgform" [formGroup]="addcatgform">
+        <h2 class="editcatgHeading mb-3">Add your Category</h2>
+
+        <div class="mb-3">
+            <label for="addBlogTitle" class="form-label">Title</label>
+            <input type="text" class="form-control" id="editCatgTitle" placeholder="title" name="category_title"
+                formControlName="category_title">
+        </div>
+        <div class="text-center">
+            <input class="form-control" type="file" (change)="onChange($event)" />
+            <br/>
+        </div>
+
+        <div class="mb-3">
+            <button class="btn editcatgSubmit" type="submit" (click)="addCatgDetails()">Submit</button>
+        </div>
+
+    </form>
+</div>

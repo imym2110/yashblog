@@ -1,14 +1,10 @@
 @import "/src/assets/custom-colors.scss";
-@import "/src/assets/typography.scss";
 
 header{
     box-shadow: 4px 6px 13px rgba(215, 215, 215, 0.25);
     background: $light-grey-1;
 }
-// .header-container{
-//     padding-bottom: 20px;
-//     width: 1250px;
-// }
+
 .row{
     justify-content: space-between;
 }
@@ -27,7 +23,8 @@ header{
     span {
         width: 48px;
         height: 27px;
-        @include paragraph-2;
+        font-size: 18px;
+        font-weight: 700;
         line-height: 23px;
         color: $blue;
         transition: all 0.1s linear 0.1s;
@@ -47,7 +44,6 @@ header{
     gap: 50px;
     list-style-type: none;
     text-decoration: none;
-    //gap: 50px;
     padding: 20px 0px 0px 0px;
 }
 .header-link{
@@ -56,8 +52,18 @@ header{
     font-size: 18px;
     font-weight: 700;
 }
+.navbar-dropdown{
+    display: flex;
+    justify-content: center;
+
+    .navbar-dropdown-button{
+        font-size: 18px;
+        font-weight: 700;
+        padding: 0px;
+    }
+}
 .list-images{
-    padding: 0px 5px 5px 0px;
+    padding: 5px 10px 5px 0px;
 }
 .header-button{
     display: flex;
@@ -71,7 +77,7 @@ header{
     font-weight: 700;
 }
 
-.dropdown {
+.dropdown-main {
     visibility: hidden;
     position: absolute;
     margin: 43px 23px;
@@ -114,7 +120,7 @@ $breakpoint-tablet: 767px;
     .responsive-col-1{
         margin-top: 15px;
     }
-    .dropdown {
+    .dropdown-main {
         visibility: initial;
         display: flex;
         justify-content: flex-end;

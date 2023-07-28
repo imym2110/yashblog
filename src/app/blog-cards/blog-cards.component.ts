@@ -24,31 +24,11 @@ export class BlogCardsComponent implements OnInit {
   @Input() blogsdata: any;
 
   ngOnInit() {
-    console.log(this.blogsdata, 'Init')
+    // console.log(this.blogsdata, 'Init')
     this.initFeaturedData();
   }
 
 
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   if (changes['blogsdata']) {
-  //     let abc = changes;
-  //     console.log(abc, 'badfuwgqfjksbjk');
-
-  //   }
-  //   else {
-  //     console.log('Data not received')
-  //   }
-  // }
-
-
-  // ngOnChanges(changes:SimpleChanges):void{
-
-  //   if(changes['categoryChildData'])
-  //   {
-  //     let x = changes['categoryChildData'];
-  //     console.log('abc',x)
-  //   }
-  // }
   initFeaturedData() {
 
     

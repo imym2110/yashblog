@@ -1,11 +1,11 @@
-@import "../../assets/custom-colors.scss" ;
+@import "../../assets/custom-colors.scss";
 
 
 
 .login-form {
     display: flex;
     flex-direction: column;
-    width: 17%;
+    width: 20%;
     margin: 200px auto;
     padding: 50px 20px;
     box-shadow: 0px 0px 5px 1px #cccccc;
@@ -24,32 +24,29 @@
 .login-submit {
     background-color: $blue;
     color: $white;
+    font-weight: 700;
     border-radius: 15px;
     padding: 10px;
-    margin: 20px 10px 1px 10px;
+    margin: 10px 10px 1px 10px;
     border: none;
     transition: all 0.1s linear 0.1s;
 
-    &:hover{
+    &:hover {
         background-color: $orange;
     }
 }
 
-.register{
-    background-color: $orange;
-    color: $white;
-    border-radius: 15px;
-    padding: 10px;
-    margin: 20px 10px 5px 10px;
-    border: none;
-    transition: all 0.1s linear 0.1s;
-
-    &:hover{
-        background-color: $blue;
-    }
+.register {
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    color: $black;
+    padding: 5px;
+    margin: 10px 10px 1px 10px;
 }
 
-.logout{
+
+.logout {
     background-color: $blue;
     color: $white;
     border-radius: 10px;
@@ -61,22 +58,31 @@
     justify-content: center;
 }
 
+.disclaimer {
+    color: $orange;
+    font-weight: 700;
+    padding: 7px;
+    margin-top: 5px;
+}
+
 $breakpoint-tablet: 1199px;
 
 @media (max-width: $breakpoint-tablet) {
 
-    .login-form{
+    .login-form {
         align-items: center;
         min-width: 250px;
     }
-    .login-details{
+
+    .login-details {
         min-width: 179px;
     }
-    p{
+
+    p {
         min-width: 140px;
     }
-    .login-submit{
+
+    .login-submit {
         min-width: 165px;
     }
 }
-

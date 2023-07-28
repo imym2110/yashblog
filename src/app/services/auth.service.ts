@@ -1,15 +1,15 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 import { StrapiService } from './strapi.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  isAuthenticate: boolean = false;
 
-  
+  public hLogflag : Subject<any> = new Subject();    
+  isAuthenticate: boolean = false;
 
   constructor(private strapiservice : StrapiService){
     let a = localStorage.getItem('token');
@@ -22,12 +22,12 @@ export class AuthService {
   login(): Observable<boolean> {
     if (this.strapiservice.getUser('')) {      
       this.isAuthenticate = true;
-      console.log('Loggedin', this.isAuthenticate)
+      //  console.log('Loggedin', this.hLogflag)
       return of(true);
     }
     else{
       this.isAuthenticate = false;
-      console.log('Loggedout', this.isAuthenticate)
+      // console.log('Loggedout', this.isAuthenticate)
     return of(false);
     }
   }
